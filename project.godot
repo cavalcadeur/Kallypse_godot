@@ -1,0 +1,30 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=3
+
+[application]
+
+config/name="Kallypse"
+run/main_scene="res://Menu.tscn"
+boot_splash/image="res://images/imgLab/non-gameplay/savane.png"
+boot_splash/fullsize=false
+config/icon="res://images/icon.png"
+
+[autoload]
+
+global="*res://global/global.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1024
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

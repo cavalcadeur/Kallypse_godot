@@ -1,0 +1,16 @@
+{
+    "position":[],
+    "dialogues":[[0, 0, 1, [0, 1]],
+                 [1, 0, 2, []],
+                 [0, 1, 3, []],
+                 [1, 1, 4, []],
+                 [0, 2, 5, []],
+                 [0, 3, 5, [1, 2, 3]]],
+    "mort":0,
+    "first":0,
+    "events":[["deactivateCroissant"],
+              ["img","non_gameplay/savane_mort"],
+              ["playSong","matin"],
+              ["waitKey",[4]],
+              ["changeStep",666]]
+}

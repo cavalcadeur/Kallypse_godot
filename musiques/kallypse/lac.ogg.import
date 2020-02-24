@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lac.ogg-49fa3c33b12f4a01134e255705869423.oggstr"
+
+[deps]
+
+source_file="res://musiques/kallypse/lac.ogg"
+source_md5="5d7d3e3fa1167db412cc2172654e62a0"
+
+dest_files=[ "res://.import/lac.ogg-49fa3c33b12f4a01134e255705869423.oggstr" ]
+dest_md5="9bf6004f83693b16cb85870ea3fb58bb"
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://bubble.gd" type="Script" id=1]
+
+[node name="bubble" type="AnimatedSprite"]
+
+animation = "default"
+script = ExtResource( 1 )
+timeOut = 8
+factor = 1.01
+speedUp = -200
+
+

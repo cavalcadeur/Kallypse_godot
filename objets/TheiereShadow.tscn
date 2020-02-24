@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://images/theiere-shadow.png" type="Texture" id=1]
+[ext_resource path="res://objets/TheiereShadow.gd" type="Script" id=2]
+
+[node name="TheiereShadow" type="Sprite"]
+
+position = Vector2( 3.05176e-05, 1.715 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 30 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Offset" ]
+fadeTime = 0.5
+
+

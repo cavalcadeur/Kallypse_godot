@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Caterpillar.gd" type="Script" id=1]
+[ext_resource path="res://images/particles/caterpillar.png" type="Texture" id=2]
+
+[node name="Caterpillar" type="Node2D"]
+
+script = ExtResource( 1 )
+speed = 300
+
+[node name="Sprite1" type="Sprite" parent="." index="0"]
+
+position = Vector2( -0.132717, 0.380611 )
+scale = Vector2( 0.480445, 0.480445 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 0.467923, 43.5256 )
+scale = Vector2( 0.411187, 0.411187 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="." index="2"]
+
+position = Vector2( -0.349398, 87.6704 )
+scale = Vector2( 0.359934, 0.359934 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="." index="3"]
+
+position = Vector2( 0.246982, 120.801 )
+scale = Vector2( 0.282253, 0.282253 )
+texture = ExtResource( 2 )
+
+

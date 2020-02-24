@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Obj.gd" type="Script" id=1]
+[ext_resource path="res://shadowTrail.tscn" type="PackedScene" id=2]
+
+[node name="Obj" type="KinematicBody2D" groups=[
+"obstacle",
+]]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+vitesse = 5
+Shadow = ExtResource( 2 )
+triggerZone = 120
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objets/Photo.gd" type="Script" id=1]
+[ext_resource path="res://images/portraitAlien.png" type="Texture" id=2]
+
+[node name="Sprite" type="Node2D"]
+
+position = Vector2( -0.624851, 2.97457 )
+scale = Vector2( 0.493702, 0.493702 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 2.55316, 151.913 )
+texture = ExtResource( 2 )
+
+

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://JumpingTheiere.gd" type="Script" id=1]
+[ext_resource path="res://objets/TheiereShadow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://images/theiere.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 8.83929 )
+
+[node name="JumpingTheiere" type="Area2D"]
+
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+timeOnGround = 1.0
+speed = 300
+Shadow = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 0.825012, -1.358 )
+scale = Vector2( 1.00005, 0.98302 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, -225 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 35.6467, -5.74672 )
+scale = Vector2( 16.6614, 4.94435 )
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="." to="." method="_on_JumpingTheiere_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_JumpingTheiere_area_exited"]
+
+[connection signal="body_entered" from="." to="." method="_on_JumpingTheiere_body_entered"]
+
+[connection signal="body_exited" from="." to="." method="_on_JumpingTheiere_body_exited"]
+
+

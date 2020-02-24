@@ -1,0 +1,2 @@
+dialogues : [[1,1,1,5]]
+[speaker,dialoguesId,nextBit,event (optionnal)]

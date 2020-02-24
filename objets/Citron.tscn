@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Obj.tscn" type="PackedScene" id=1]
+[ext_resource path="res://images/orange.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Citron" instance=ExtResource( 1 )]
+
+JumpingThing = null
+speed = 400
+center = Vector2( 990, 520 )
+radiusX = 600
+radiusY = 300
+deathRadius = 45
+
+[node name="Sprite" parent="." index="0"]
+
+position = Vector2( 0.698334, -59.3586 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0.313522, -24.8301 )
+scale = Vector2( 5.15695, 1.88936 )
+shape = SubResource( 1 )
+
+

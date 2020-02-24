@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/37.ogg-ed43c93940f783b1b6dbfffe23669941.oggstr"
+
+[deps]
+
+source_file="res://voices/kallypse/666/37.ogg"
+source_md5="63114531c3d4d8e30c3961fa9cd9fe3d"
+
+dest_files=[ "res://.import/37.ogg-ed43c93940f783b1b6dbfffe23669941.oggstr" ]
+dest_md5="b817779cbb77fddb54fb396437e83a9c"
+
+[params]
+
+loop=true
+loop_offset=0

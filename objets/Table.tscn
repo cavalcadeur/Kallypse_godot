@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://objets/Table.gd" type="Script" id=1]
+[ext_resource path="res://images/table-shadow.png" type="Texture" id=2]
+[ext_resource path="res://images/table.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13.1001, 10 )
+
+[node name="Table" type="KinematicBody2D" index="0"]
+
+position = Vector2( 0.323613, 0.301346 )
+scale = Vector2( 0.65, 0.65 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+speed = 10000
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 15.0069, -43.3584 )
+texture = ExtResource( 2 )
+
+[node name="up" type="Sprite" parent="." index="1"]
+
+position = Vector2( 12.2716, -127.845 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 14.3458, 11.5005 )
+scale = Vector2( 14.9562, 9.70193 )
+shape = SubResource( 1 )
+
+

@@ -1,0 +1,167 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://Framboise.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Boss_Lapin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tuto_fleches.tscn" type="PackedScene" id=4]
+[ext_resource path="res://roulade.tscn" type="PackedScene" id=5]
+[ext_resource path="res://exclamation.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objets/Photo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://CroissantShooter.tscn" type="PackedScene" id=8]
+[ext_resource path="res://images/non_gameplay/savane_fond.png" type="Texture" id=9]
+[ext_resource path="res://images/non_gameplay/savane_fond1.png" type="Texture" id=10]
+[ext_resource path="res://images/non_gameplay/savane_fond2.png" type="Texture" id=11]
+[ext_resource path="res://Caterpillar.tscn" type="PackedScene" id=12]
+[ext_resource path="res://ObjetsTable.tscn" type="PackedScene" id=13]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Camera.gd" type="Script" id=15]
+
+[node name="General" type="Node" groups=[
+"chef",
+]]
+
+script = ExtResource( 1 )
+Framboise = ExtResource( 2 )
+Boss_Lapin = ExtResource( 3 )
+Tuto_fleches = ExtResource( 4 )
+Tuto_Roulade = ExtResource( 5 )
+Exclamation = ExtResource( 6 )
+Photo = ExtResource( 7 )
+Shooter = ExtResource( 8 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+_sections_unfolded = [ "Pause", "Scroll" ]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 0, 0.8 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="BackGround" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+
+position = Vector2( -0.135559, 197.611 )
+scale = Vector2( 1, 1.14503 )
+texture = ExtResource( 9 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
+
+motion_scale = Vector2( 0.3, 0.9 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="BackGround2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2" index="0"]
+
+position = Vector2( 259.716, -144.707 )
+scale = Vector2( 1.362, 1.362 )
+texture = ExtResource( 10 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" index="2"]
+
+motion_scale = Vector2( 0.6, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="BackGround3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3" index="0"]
+
+position = Vector2( 883.459, -68.8616 )
+scale = Vector2( 1.2683, 1.2683 )
+texture = ExtResource( 11 )
+
+[node name="Caterpillar3" parent="." index="1" instance=ExtResource( 12 )]
+
+scale = Vector2( 0.8, 0.8 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ObjetsTable" parent="." index="2" instance=ExtResource( 13 )]
+
+[node name="Caterpillar" parent="." index="3" instance=ExtResource( 12 )]
+
+position = Vector2( 1.26048, -1.26049 )
+speed = 290
+
+[node name="Caterpillar2" parent="." index="4" instance=ExtResource( 12 )]
+
+position = Vector2( 1.87643, -0.658852 )
+speed = 330
+
+[node name="HUD" parent="." index="5" instance=ExtResource( 14 )]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Camera" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 21.4284, 1.89074 )
+script = ExtResource( 15 )
+_sections_unfolded = [ "Transform" ]
+center = Vector2( 940, 300 )
+
+[node name="Camera2D" type="Camera2D" parent="Camera" index="0"]
+
+position = Vector2( -19.531, -0.630245 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = 0
+limit_top = -700
+limit_right = 1920
+limit_bottom = 1000
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Limit", "Smoothing" ]
+
+[node name="Polygon2D" type="Polygon2D" parent="Camera" index="1"]
+
+visible = false
+position = Vector2( -0.296198, 0.980602 )
+scale = Vector2( 0.370458, 0.355089 )
+polygon = PoolVector2Array( -36.5469, -33.8118, 10.2823, -40.5017, 49.5855, -11.2334, 41.6412, 22.6342, -10.6236, 38.1046, -49.0905, 5.49134 )
+uv = PoolVector2Array(  )
+color = Color( 1, 0, 0, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+

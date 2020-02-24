@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://images/imgLab/non-gameplay/savane_general.png" type="Texture" id=1]
+[ext_resource path="res://BackGround.gd" type="Script" id=2]
+[ext_resource path="res://images/titre.png" type="Texture" id=3]
+[ext_resource path="res://Title.gd" type="Script" id=4]
+[ext_resource path="res://fonts/Avara.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Label.gd" type="Script" id=6]
+[ext_resource path="res://images/croissant.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 65
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Menu" type="Node" index="0"]
+
+[node name="BackGround" type="Sprite" parent="." index="0"]
+
+position = Vector2( 992.471, 73.4077 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Title" type="Sprite" parent="." index="1"]
+
+position = Vector2( 1053.39, 252.283 )
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="Liste" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 935.0
+margin_top = 576.0
+margin_right = 1224.0
+margin_bottom = 816.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Jouer
+Bonus
+Quitter"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 6 )
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Menu0" type="Sprite" parent="Liste" index="0"]
+
+position = Vector2( 18.6033, 35.9067 )
+scale = Vector2( 0.627645, 0.627645 )
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Liste/Menu0" index="0"]
+
+position = Vector2( 397.64, 2.00842 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Menu1" type="Sprite" parent="Liste" index="1"]
+
+position = Vector2( 5.97174, 113.801 )
+scale = Vector2( 0.627645, 0.627645 )
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Liste/Menu1" index="0"]
+
+position = Vector2( 441.245, 0.331299 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Menu2" type="Sprite" parent="Liste" index="2"]
+
+position = Vector2( -7.7124, 194.853 )
+scale = Vector2( 0.627645, 0.627645 )
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Liste/Menu2" index="0"]
+
+position = Vector2( 483.173, 3.68555 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+

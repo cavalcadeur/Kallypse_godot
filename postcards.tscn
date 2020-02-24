@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://images/imgLab/non-gameplay/savane_general.png" type="Texture" id=1]
+[ext_resource path="res://BackGround.gd" type="Script" id=2]
+
+[node name="PostCards" type="Node" index="0"]
+
+[node name="BackGround" type="Sprite" parent="." index="0"]
+
+position = Vector2( 992.471, 73.4077 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Current" type="Sprite" parent="." index="1"]
+
+[node name="Next" type="Sprite" parent="." index="2"]
+
+

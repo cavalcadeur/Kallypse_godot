@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Boss_Lapin.gd" type="Script" id=1]
+[ext_resource path="res://exploseFramboise.tscn" type="PackedScene" id=2]
+[ext_resource path="res://images/framboise-shadow.png" type="Texture" id=3]
+[ext_resource path="res://images/framboise.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Boss_Lapin" type="Area2D" groups=[
+"framboise",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+vitesse = 200
+center = Vector2( 990, 520 )
+radiusX = 600
+radiusY = 300
+Explosion = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="." index="0"]
+
+position = Vector2( -1.13205, -23.7732 )
+texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( 0.37735, -29.0561 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -1.03528, -1.81366 )
+scale = Vector2( 2.51784, 1.06688 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Boss_Lapin_body_entered"]
+
+
