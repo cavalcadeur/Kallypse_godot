@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://generique/falling.gd" type="Script" id=1]
+[ext_resource path="res://images/croissant.png" type="Texture" id=2]
+
+[node name="Sprite" type="Sprite"]
+
+rotation = 3.14159
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+Explosion = null
+
+[node name="Sprite5" type="Sprite" parent="." index="0"]
+
+visible = false
+self_modulate = Color( 1, 1, 1, 0.2 )
+position = Vector2( 0, 80 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Sprite4" type="Sprite" parent="." index="1"]
+
+visible = false
+self_modulate = Color( 1, 1, 1, 0.4 )
+position = Vector2( 0, 60 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Sprite3" type="Sprite" parent="." index="2"]
+
+visible = false
+self_modulate = Color( 1, 1, 1, 0.6 )
+position = Vector2( 0, 40 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Sprite2" type="Sprite" parent="." index="3"]
+
+visible = false
+self_modulate = Color( 1, 1, 1, 0.8 )
+position = Vector2( 0, 20 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Sprite1" type="Sprite" parent="." index="4"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset" ]
+
+

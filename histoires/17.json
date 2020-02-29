@@ -6,7 +6,8 @@
               ["img","non_gameplay/savane_mort"],
               ["playSong","matin"],
               ["waitKey",[4]],
-              ["changeStep",666]],
+			  ["addPostCard",5],
+			  ["generique"]],
     "first":0
 
 }

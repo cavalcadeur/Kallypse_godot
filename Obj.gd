@@ -20,7 +20,7 @@ export var center = Vector2(990,520)
 export var radiusX = 600
 export var radiusY = 300
 export var deathRadius = 45
-var sens
+var sens = Vector2(0,0)
 var state = 2
 var strat = 1
 var cible = null

@@ -126,6 +126,9 @@ func activate():
 func die():
 	deactivate()
 	get_tree().get_nodes_in_group('chef')[0].mort()
+	
+func revive():
+	activate()
 
 func _on_Croissant_hit():
 	dir *= -1

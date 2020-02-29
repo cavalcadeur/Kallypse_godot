@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/generique.ogg-1246fc083033a2148dc5e093c91b8501.oggstr"
+
+[deps]
+
+source_file="res://musiques/kallypse/generique.ogg"
+source_md5="5b16bf5031b31d68d3247d6133359df4"
+
+dest_files=[ "res://.import/generique.ogg-1246fc083033a2148dc5e093c91b8501.oggstr" ]
+dest_md5="dae3ee93c53a1735c9b2643f342b3393"
+
+[params]
+
+loop=true
+loop_offset=0

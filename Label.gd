@@ -8,11 +8,13 @@ var buffer = 0.2
 var velocity = 0
 var firstTime = true
 var wait = 0
+var canGo = false
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
+	global.load_game()
+	canGo = false
 
 func _process(delta):
 	var screen_size = get_viewport_rect().size
@@ -36,12 +38,15 @@ func _process(delta):
 		velocity = 0
 	
 	if Input.is_action_pressed("ui_select"):
+		if not canGo:
+			return
 		if value == 0:
 			get_tree().change_scene("res://main.tscn")
 		elif value == 2:
 			get_tree().quit()
 		elif value == 1:
 			get_tree().change_scene("res://postcards.tscn")
-			
+	else:
+		canGo = true
 			
 			

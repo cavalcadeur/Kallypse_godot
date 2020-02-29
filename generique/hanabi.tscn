@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://generique/hanabi.gd" type="Script" id=1]
+[ext_resource path="res://generique/explose2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://images/framboise.png" type="Texture" id=3]
+
+[node name="Sprite" type="Sprite"]
+
+script = ExtResource( 1 )
+Explosion = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="." index="0"]
+
+self_modulate = Color( 1, 1, 1, 0.247059 )
+position = Vector2( 0, 90 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Sprite3" type="Sprite" parent="." index="1"]
+
+self_modulate = Color( 1, 1, 1, 0.498039 )
+position = Vector2( 0, 60 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Sprite2" type="Sprite" parent="." index="2"]
+
+self_modulate = Color( 1, 1, 1, 0.74902 )
+position = Vector2( 0, 30 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="Sprite1" type="Sprite" parent="." index="3"]
+
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Offset" ]
+
+

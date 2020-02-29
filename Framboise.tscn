@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Framboise.gd" type="Script" id=1]
 [ext_resource path="res://exploseFramboise.tscn" type="PackedScene" id=2]
-[ext_resource path="res://images/framboise.png" type="Texture" id=3]
+[ext_resource path="res://Alerte.tscn" type="PackedScene" id=3]
+[ext_resource path="res://images/framboise.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -21,11 +22,12 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-appearTime = 2
+appearTime = 3.0
 disappearTime = 1.0
-speed = 500
+speed = 450
 targetTime = 2
 Explosion = ExtResource( 2 )
+Alerte = ExtResource( 3 )
 vitesse = 50
 center = Vector2( 990, 520 )
 radiusX = 600
@@ -34,7 +36,7 @@ radiusY = 300
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( 0.681122, -28.9478 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 

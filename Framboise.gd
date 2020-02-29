@@ -7,11 +7,12 @@ var direction = Vector2(0,0)
 var die = false
 var isFish = false
 var initializing = true
-export var appearTime = 2
+export var appearTime = 2.5
 export var disappearTime = 1.5
 export var speed = 40
 export var targetTime = 5
 export (PackedScene) var Explosion
+export (PackedScene) var Alerte
 
 export var vitesse = 50
 export var center = Vector2(990,520)
@@ -22,8 +23,13 @@ func _ready():
 	if initializing:
 		state = 0
 		target = get_tree().get_nodes_in_group('Player')[0]
-		position = Vector2(randi() % 1500,randi() % 1300)
+		var truc = get_tree().get_nodes_in_group('Player')[0].position
+		var rh = randi()%3141/500
+		position = truc + Vector2(cos(rh),sin(rh)) * speed * 0.5
 		n = 0
+		var expl = Alerte.instance()
+		expl.pos = position
+		get_node("/root/General/ObjetsTable/Croissant").add_child(expl)
 
 func _process(delta):
 	if state == 0:
@@ -42,6 +48,7 @@ func act_appear(delta):
 		$Sprite.modulate.a = 1
 		direction = target.position - position
 		direction = direction.normalized() * speed
+		var rh = direction.angle()
 		
 func act_target(delta):
 	position += direction * delta
@@ -57,10 +64,17 @@ func act_disappear(delta):
 	if n >= disappearTime:
 		n = 0
 		state = 0
-		position = Vector2(randi() % 1500,randi() % 1500)
+		var truc = get_tree().get_nodes_in_group('Player')[0].position
+		var rh = randi()%3141/500
+		position = truc + Vector2(cos(rh),sin(rh)) * speed * 0.5
 		direction = Vector2(0,0)
 		if die:
 			queue_free()
+		else:
+			var expl = Alerte.instance()
+			expl.pos = position
+			get_node("/root/General/ObjetsTable/Croissant").add_child(expl)
+			
 		
 		
 

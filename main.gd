@@ -104,6 +104,9 @@ func end_event(evt):
 		if event[0] == "changeStep":
 			charge(event[1])
 			return false
+		elif event[0] == "generique":
+			get_tree().change_scene("res://Generique.tscn")
+			return false
 	return true
 	
 func start_event(evt):
@@ -220,10 +223,13 @@ func start_event(evt):
 			$ObjetsTable/Croissant.canRoll = false
 		elif event[0] == "startRoll":
 			$ObjetsTable/Croissant.canRoll = true
+		elif event[0] == "addPostCard":
+			global.add_postCard(event[1])
 			
 	
 func mort():
 	if data["mort"] == -1:
+		$ObjetsTable/Croissant.revive()
 		return
 	dialogue = data["mort"]
 	var event = data["dialogues"][dialogue][3]

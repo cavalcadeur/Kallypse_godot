@@ -89,7 +89,9 @@ texture = ExtResource( 11 )
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ObjetsTable" parent="." index="2" instance=ExtResource( 13 )]
+[node name="ObjetsTable" parent="." index="2" groups=[
+"SortY",
+] instance=ExtResource( 13 )]
 
 [node name="Caterpillar" parent="." index="3" instance=ExtResource( 12 )]
 

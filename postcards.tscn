@@ -1,18 +1,152 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://images/imgLab/non-gameplay/savane_general.png" type="Texture" id=1]
-[ext_resource path="res://BackGround.gd" type="Script" id=2]
+[ext_resource path="res://postcards.gd" type="Script" id=1]
+[ext_resource path="res://images/imgLab/non-gameplay/savane_general.png" type="Texture" id=2]
+[ext_resource path="res://BackGround.gd" type="Script" id=3]
+[ext_resource path="res://Current.gd" type="Script" id=4]
+[ext_resource path="res://Next.gd" type="Script" id=5]
+[ext_resource path="res://fonts/Avara.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://images/croissant.png" type="Texture" id=7]
+[ext_resource path="res://images/postCards/0.png" type="Texture" id=8]
+[ext_resource path="res://images/postCards/1.png" type="Texture" id=9]
+[ext_resource path="res://images/postCards/2.png" type="Texture" id=10]
+[ext_resource path="res://images/postCards/3.png" type="Texture" id=11]
+[ext_resource path="res://images/postCards/4.png" type="Texture" id=12]
+[ext_resource path="res://images/postCards/5.png" type="Texture" id=13]
+[ext_resource path="res://images/postCards/6.png" type="Texture" id=14]
+[ext_resource path="res://images/postCards/7.png" type="Texture" id=15]
+[ext_resource path="res://images/postCards/8.png" type="Texture" id=16]
 
-[node name="PostCards" type="Node" index="0"]
+[sub_resource type="DynamicFont" id=1]
+
+size = 65
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+var canGo = false
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	canGo = false
+
+func _process(delta):
+	var screen_size = get_viewport_rect().size
+	var rapport = screen_size.x / 1800
+	set_scale(Vector2(rapport,rapport))
+	set_position(Vector2((screen_size.x - rapport*200) * 0.5,screen_size.y * 0.85))
+	if Input.is_action_pressed(\"ui_select\"):
+		if canGo:
+			get_tree().change_scene(\"res://Menu.tscn\")
+	else:
+		canGo = true"
+
+[node name="PostCards" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
 
 [node name="BackGround" type="Sprite" parent="." index="0"]
 
 position = Vector2( 992.471, 73.4077 )
-texture = ExtResource( 1 )
-script = ExtResource( 2 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Current" type="Sprite" parent="." index="1"]
 
+script = ExtResource( 4 )
+
 [node name="Next" type="Sprite" parent="." index="2"]
+
+script = ExtResource( 5 )
+
+[node name="Retour" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 657.0
+margin_top = 778.0
+margin_right = 877.0
+margin_bottom = 854.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Retour"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Retour" index="0"]
+
+position = Vector2( -39.1724, 34.2269 )
+scale = Vector2( 0.612845, 0.612845 )
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Retour/Sprite" index="0"]
+
+position = Vector2( 488.346, 2.33643 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="card0" type="Sprite" parent="." index="4"]
+
+visible = false
+texture = ExtResource( 8 )
+
+[node name="card1" type="Sprite" parent="." index="5"]
+
+visible = false
+texture = ExtResource( 9 )
+
+[node name="card2" type="Sprite" parent="." index="6"]
+
+visible = false
+texture = ExtResource( 10 )
+
+[node name="card3" type="Sprite" parent="." index="7"]
+
+visible = false
+texture = ExtResource( 11 )
+
+[node name="card4" type="Sprite" parent="." index="8"]
+
+visible = false
+texture = ExtResource( 12 )
+
+[node name="card5" type="Sprite" parent="." index="9"]
+
+visible = false
+texture = ExtResource( 13 )
+
+[node name="card6" type="Sprite" parent="." index="10"]
+
+visible = false
+texture = ExtResource( 14 )
+
+[node name="card7" type="Sprite" parent="." index="11"]
+
+visible = false
+texture = ExtResource( 15 )
+
+[node name="card8" type="Sprite" parent="." index="12"]
+
+visible = false
+texture = ExtResource( 16 )
 
 

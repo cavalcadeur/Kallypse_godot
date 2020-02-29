@@ -1,0 +1,296 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://generique/hanabi.tscn" type="PackedScene" id=1]
+[ext_resource path="res://generique/propaganda.tscn" type="PackedScene" id=2]
+[ext_resource path="res://generique/ExpandingCircle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://generique/fallingCroissant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://images/non_gameplay/credits_roll/credit0.png" type="Texture" id=5]
+[ext_resource path="res://Credit0.gd" type="Script" id=6]
+[ext_resource path="res://images/non_gameplay/credits_roll/credit1.png" type="Texture" id=7]
+[ext_resource path="res://images/non_gameplay/credits_roll/credit2.png" type="Texture" id=8]
+[ext_resource path="res://images/non_gameplay/credits_roll/credit3.png" type="Texture" id=9]
+[ext_resource path="res://images/non_gameplay/credits_roll/credit4.png" type="Texture" id=10]
+[ext_resource path="res://images/non_gameplay/credits_roll/credit5.png" type="Texture" id=11]
+[ext_resource path="res://musiques/kallypse/generique.ogg" type="AudioStream" id=12]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node2D
+
+var time
+var index = 0
+var events = [[0,\"credit\",0],[13,\"credit\",0],[15,\"credit\",1],[15.4,\"framboise\"],[16,\"framboise\"],[16.2,\"framboise\"],[17.6,\"framboise\"],[18.1,\"framboise\"],[19,\"framboise\"],[19.4,\"framboise\"],[20,\"framboise\"],[20.2,\"framboise\"],[21,\"framboise\"],[21.5,\"framboise\"],[22.1,\"framboise\"],[22.6,\"framboise\"],[23,\"credit\",1],[24.6,\"expCircle\",0.5,0.5],[25,\"credit\",2],[33,\"credit\",2],[34,\"expCircle\",0.3,0.4],[34.2,\"expCircle\",0.7,0.8],[34.4,\"expCircle\",0.2,0.7],[35,\"credit\",3],[43,\"credit\",3],[45,\"credit\",4],[58,\"credit\",4],[60,\"credit\",5],[80,\"credit\",5],[10000]]
+export (PackedScene) var Hanabi
+export (PackedScene) var Prop
+export (PackedScene) var ExpCircle
+export (PackedScene) var Croissant
+var scrSize
+
+func _ready():
+	time = 0
+	scrSize = get_viewport_rect().size
+	frambRow(2,2.5,15,50,scrSize.x - 50,0.25*scrSize.y,0.5*scrSize.y)
+	frambRow(3,3.5,15,scrSize.x - 50,50,0.25*scrSize.y,0.5*scrSize.y)
+	propagandaRow(5,15)
+	propagandaRow(35,80)
+	frambRow(60,70,25,50,scrSize.x - 50,0.25*scrSize.y,0.5*scrSize.y)
+	frambRow(70,80,25,scrSize.x - 50,50,0.25*scrSize.y,0.5*scrSize.y)
+	frambRow(28,32,25,25,scrSize.x/2 - 25,0.25*scrSize.y,0.5*scrSize.y)
+	frambRow(28,32,25,scrSize.x - 25,scrSize.x/2 + 25,0.25*scrSize.y,0.5*scrSize.y)
+	croissantRain(45,58,60)
+
+func _process(delta):
+	time += delta
+	while events[index][0] <= time:
+		makeEvent(events[index])
+		index += 1
+		
+		
+func makeEvent(evt):
+	if evt[1] == \"credit\":
+		var a = get_node(\"Credit\" + str(evt[2]))
+		a.set_visible(not a.is_visible())
+	elif evt[1] == \"framboise\":
+		var hanabi = Hanabi.instance()
+		if evt.size() > 2:
+			hanabi.position.x = evt[2]
+			hanabi.goal = evt[3]
+		else:
+			var scrSize = get_viewport_rect().size
+			hanabi.position.x = randi() % int(scrSize.x)
+			hanabi.goal = randi() % int(scrSize.y / 2)
+		add_child(hanabi)
+	elif evt[1] == \"croissant\":
+		var hanabi = Croissant.instance()
+		if evt.size() > 2:
+			hanabi.position.x = evt[2]
+			hanabi.goal = evt[3]
+		else:
+			var scrSize = get_viewport_rect().size
+			hanabi.position.x = randi() % int(scrSize.x)
+			hanabi.goal = scrSize.y + 200
+		add_child(hanabi)
+	elif evt[1] == \"propaganda\":
+		var prop = Prop.instance()
+		prop.position = get_viewport_rect().size
+		prop.position.x /= 2
+		add_child_below_node($Polygon2D,prop)
+	elif evt[1] == \"expCircle\":
+		var prop = ExpCircle.instance()
+		prop.position = get_viewport_rect().size
+		prop.position.x *= evt[2]
+		prop.position.y *= evt[3]
+		add_child_below_node($Polygon2D,prop)
+		
+func frambRow(startTime,endTime,n,startX,endX,goalA,goalB):
+	var interX = float(endX - startX) / (n-1)
+	var interTime = float(endTime - startTime) / (n-1)
+	goalA = int(goalA)
+	goalB = int(goalB)
+	for i in range(n):
+		insert_evt([startTime + i*interTime,\"framboise\",startX + i*interX,goalA + randi()%(goalB - goalA)])
+		
+func propagandaRow(startTime,endTime):
+	var n = float(endTime - startTime) / 0.6
+	n = int(n)
+	for i in range(n):
+		insert_evt([startTime + i*0.6,\"propaganda\"])
+		
+func croissantRain(start,end,n):
+	var interT = float(end - start) / (n-1)
+	for i in range(n):
+		insert_evt([start + i*interT,\"croissant\"])
+		
+func insert_evt(evt):
+	var a = 0
+	var b = events.size() - 1
+	var c = 0
+	if events[a][0] > evt[0]:
+		b = a
+	elif events[b][0] < evt[0]:
+		a = b
+	while (b-a) > 1:
+		c = int((b+a)/2)
+		if events[c][0] <= evt[0]:
+			a = c
+		if events[c][0] >= evt[0]:
+			b = c
+	events.insert(b,evt)
+	
+	
+	
+	
+	
+	"
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends \"res://Credit0.gd\"
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	pass
+
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+"
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends \"res://Credit0.gd\"
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	pass
+
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+"
+
+[sub_resource type="GDScript" id=4]
+
+script/source = "extends \"res://Credit0.gd\"
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	pass
+
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+"
+
+[sub_resource type="GDScript" id=5]
+
+script/source = "extends \"res://Credit0.gd\"
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	pass
+
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+"
+
+[sub_resource type="GDScript" id=6]
+
+script/source = "extends \"res://Credit0.gd\"
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	pass
+
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+"
+
+[node name="Generique" type="Node2D"]
+
+script = SubResource( 1 )
+Hanabi = ExtResource( 1 )
+Prop = ExtResource( 2 )
+ExpCircle = ExtResource( 3 )
+Croissant = ExtResource( 4 )
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="0"]
+
+position = Vector2( -4.42603, -4.42603 )
+polygon = PoolVector2Array( -485.476, 1452.18, 2810.12, 1569.88, 2868.97, -617.383, -671.834, -744.892 )
+uv = PoolVector2Array(  )
+color = Color( 0.282353, 0.647059, 0.870588, 1 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+
+[node name="Credit0" type="Sprite" parent="." index="1"]
+
+visible = false
+position = Vector2( 938.314, 500.139 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Credit1" type="Sprite" parent="." index="2"]
+
+visible = false
+position = Vector2( 948.075, 535.928 )
+texture = ExtResource( 7 )
+script = SubResource( 2 )
+
+[node name="Credit2" type="Sprite" parent="." index="3"]
+
+visible = false
+position = Vector2( 938.314, 500.139 )
+texture = ExtResource( 8 )
+script = SubResource( 3 )
+
+[node name="Credit3" type="Sprite" parent="." index="4"]
+
+visible = false
+position = Vector2( 983.863, 529.421 )
+texture = ExtResource( 9 )
+script = SubResource( 4 )
+
+[node name="Credit4" type="Sprite" parent="." index="5"]
+
+visible = false
+position = Vector2( 938.314, 500.139 )
+texture = ExtResource( 10 )
+script = SubResource( 5 )
+
+[node name="Credit5" type="Sprite" parent="." index="6"]
+
+visible = false
+position = Vector2( 938.314, 500.139 )
+texture = ExtResource( 11 )
+script = SubResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+
