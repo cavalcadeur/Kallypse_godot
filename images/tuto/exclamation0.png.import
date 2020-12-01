@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/exclamation0.png-5f325a0cdf28433f994ee420be1e9b29.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/tuto/exclamation0.png"
-source_md5="3a9c13d2a36893d8781838311c657cde"
-
 dest_files=[ "res://.import/exclamation0.png-5f325a0cdf28433f994ee420be1e9b29.stex" ]
-dest_md5="a14c8eee5a55d3f94e079a34175b2602"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

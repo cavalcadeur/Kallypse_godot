@@ -9,7 +9,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 8.83929 )
 
-[node name="JumpingTheiere" type="Area2D"]
+[node name="JumpingTheiere" type="Area2D" groups=[
+"JumpingThing",
+]]
 
 input_pickable = false
 gravity_vec = Vector2( 0, 1 )

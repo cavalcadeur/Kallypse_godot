@@ -24,12 +24,11 @@ func _process(delta):
 			timeout = timeOnGround
 			get_node("/root/General").shakeCamera()
 			if crushing:
-				get_node("/root/General").mort()
-				disappear()
+				get_node("/root/General/ObjetsTable/Croissant").die()
 		timeout -= delta
 		if touched > 0:
 			# Ici faire la gestion de la mort de la theiere sauteuse.
-			disappear()
+			disappear(true)
 		g = 0
 		offsetY = 0
 		if timeout > 4 * timeOnGround/5:
@@ -58,8 +57,9 @@ func _on_JumpingTheiere_body_exited(body):
 	if body.is_in_group("Player"):
 		crushing = false
 
-func disappear():
-	get_node("/root/General").jumpThingDie()
+func disappear(aa):
+	if aa:
+		get_node("/root/General").jumpThingDie()
 	get_node("/root/General/ObjetsTable/Theiere").position = position
 	get_node("/root/General/ObjetsTable/TheiereShadow").disappear()
 	queue_free()

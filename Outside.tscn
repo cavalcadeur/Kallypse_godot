@@ -7,7 +7,7 @@
 [ext_resource path="res://objets/Arbre.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objets/RocherA.tscn" type="PackedScene" id=6]
 
-[node name="ObjetsTable" type="YSort" index="0"]
+[node name="ObjetsTable" type="YSort"]
 
 sort_enabled = true
 _sections_unfolded = [ "Transform" ]
@@ -20,7 +20,9 @@ position = Vector2( 619.081, 772.971 )
 
 position = Vector2( 1005.93, 783.891 )
 
-[node name="Table" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Table" parent="." index="2" groups=[
+"Player",
+] instance=ExtResource( 3 )]
 
 position = Vector2( 805.169, 747.166 )
 speed = 400

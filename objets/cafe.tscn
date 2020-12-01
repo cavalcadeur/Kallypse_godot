@@ -10,6 +10,8 @@ extents = Vector2( 48.0832, 10 )
 
 [node name="Cafe" instance=ExtResource( 1 )]
 
+hitType = "cafe"
+
 [node name="Sprite" parent="." index="0"]
 
 position = Vector2( 0.698334, -57.9619 )

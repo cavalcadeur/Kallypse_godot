@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/savane_general.png-3749ca0812028eeb499c0be545e74946.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/non_gameplay/savane_general.png"
-source_md5="ce456d640955ea3daba551cff87d354a"
-
 dest_files=[ "res://.import/savane_general.png-3749ca0812028eeb499c0be545e74946.stex" ]
-dest_md5="66e6da68217840c327f4f7542e8e4886"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

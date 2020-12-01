@@ -3,6 +3,8 @@ extends Label
 var screen_size
 
 func _ready():
+	if global.settings[2] == 0:
+		set_visible(false)
 	screen_size = get_viewport_rect().size
 
 func _process(delta):

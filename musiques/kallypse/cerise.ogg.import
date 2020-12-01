@@ -7,10 +7,7 @@ path="res://.import/cerise.ogg-fc6d66e68022e54fce1252aa896e030b.oggstr"
 [deps]
 
 source_file="res://musiques/kallypse/cerise.ogg"
-source_md5="70d096669df5cee643351da449a4a837"
-
 dest_files=[ "res://.import/cerise.ogg-fc6d66e68022e54fce1252aa896e030b.oggstr" ]
-dest_md5="02f958e783c2cd01e263aeb917d486ee"
 
 [params]
 

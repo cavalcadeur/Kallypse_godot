@@ -7,10 +7,7 @@ path="res://.import/tease_demo.ogg-5f35974947563e220c7dc83b42ae20e8.oggstr"
 [deps]
 
 source_file="res://musiques/kallypse/tease_demo.ogg"
-source_md5="e3a303767648e4823e6c59f5262e95d9"
-
 dest_files=[ "res://.import/tease_demo.ogg-5f35974947563e220c7dc83b42ae20e8.oggstr" ]
-dest_md5="9d9d4e8638977f6fc378522ad621f437"
 
 [params]
 

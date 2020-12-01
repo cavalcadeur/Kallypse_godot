@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/Grid.svg-11a9096f4966f72fc746466dde4eca64.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://fonts/Avara-master/source/SVG/Grid.svg"
-source_md5="0c9b7cde8efcd16fee32d4a5b8347bcf"
-
 dest_files=[ "res://.import/Grid.svg-11a9096f4966f72fc746466dde4eca64.stex" ]
-dest_md5="7d190f334bc99ef69ac63d99c658bfbe"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

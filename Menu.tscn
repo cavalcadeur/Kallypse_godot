@@ -9,92 +9,71 @@
 [ext_resource path="res://images/croissant.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-
 size = 65
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 5 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Menu" type="Node"]
 
-[node name="BackGround" type="Sprite" parent="." index="0"]
-
+[node name="BackGround" type="Sprite" parent="."]
 position = Vector2( 992.471, 73.4077 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="Title" type="Sprite" parent="." index="1"]
-
+[node name="Title" type="Sprite" parent="."]
 position = Vector2( 1053.39, 252.283 )
 texture = ExtResource( 3 )
 script = ExtResource( 4 )
 
-[node name="Liste" type="Label" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 935.0
-margin_top = 576.0
-margin_right = 1224.0
-margin_bottom = 816.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
+[node name="Liste" type="Label" parent="."]
+margin_left = 933.0
+margin_top = 538.0
+margin_right = 1222.0
+margin_bottom = 930.0
 custom_fonts/font = SubResource( 1 )
 text = "Jouer
 Bonus
+Options
 Quitter"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 script = ExtResource( 6 )
-_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Menu0" type="Sprite" parent="Liste" index="0"]
-
-position = Vector2( 18.6033, 35.9067 )
+[node name="Menu0" type="Sprite" parent="Liste"]
+position = Vector2( 21.7766, 70.8132 )
 scale = Vector2( 0.627645, 0.627645 )
 texture = ExtResource( 7 )
 
-[node name="Sprite" type="Sprite" parent="Liste/Menu0" index="0"]
-
+[node name="Sprite" type="Sprite" parent="Liste/Menu0"]
 position = Vector2( 397.64, 2.00842 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 7 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Menu1" type="Sprite" parent="Liste" index="1"]
-
-position = Vector2( 5.97174, 113.801 )
+[node name="Menu1" type="Sprite" parent="Liste"]
+position = Vector2( 5.97174, 145.534 )
 scale = Vector2( 0.627645, 0.627645 )
 texture = ExtResource( 7 )
 
-[node name="Sprite" type="Sprite" parent="Liste/Menu1" index="0"]
-
-position = Vector2( 441.245, 0.331299 )
+[node name="Sprite" type="Sprite" parent="Liste/Menu1"]
+position = Vector2( 441.245, 2.85913 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 7 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Menu2" type="Sprite" parent="Liste" index="2"]
-
-position = Vector2( -7.7124, 194.853 )
+[node name="Menu2" type="Sprite" parent="Liste"]
+position = Vector2( -15.6458, 226.586 )
 scale = Vector2( 0.627645, 0.627645 )
 texture = ExtResource( 7 )
 
-[node name="Sprite" type="Sprite" parent="Liste/Menu2" index="0"]
-
-position = Vector2( 483.173, 3.68555 )
+[node name="Sprite" type="Sprite" parent="Liste/Menu2"]
+position = Vector2( 516.036, 3.68542 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 7 )
-_sections_unfolded = [ "Transform" ]
 
+[node name="Menu3" type="Sprite" parent="Liste"]
+position = Vector2( -12.4724, 309.093 )
+scale = Vector2( 0.627645, 0.627645 )
+texture = ExtResource( 7 )
 
+[node name="Sprite" type="Sprite" parent="Liste/Menu3"]
+position = Vector2( 498.341, 6.21338 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 7 )

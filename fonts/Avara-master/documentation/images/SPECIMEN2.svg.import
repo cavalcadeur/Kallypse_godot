@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/SPECIMEN2.svg-21acaef88d2378a27f49e6bcf13a1e8c.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://fonts/Avara-master/documentation/images/SPECIMEN2.svg"
-source_md5="a19a56a29f6c0fe0138e53ea2c8336bb"
-
 dest_files=[ "res://.import/SPECIMEN2.svg-21acaef88d2378a27f49e6bcf13a1e8c.stex" ]
-dest_md5="dd4e2e04f7496ab365003650159b9422"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/favicon.png-80858ea7b3486d28a7eb8b98bdc616b1.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://fonts/Avara-master/webspecimen/img/favicon.png"
-source_md5="7db00e624813d5ed17a372539542c234"
-
 dest_files=[ "res://.import/favicon.png-80858ea7b3486d28a7eb8b98bdc616b1.stex" ]
-dest_md5="c7d558e133ab7465304fbaad51614e8a"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

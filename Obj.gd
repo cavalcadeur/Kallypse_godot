@@ -2,18 +2,20 @@ extends KinematicBody2D
 
 var objectif = Vector2(0,0)
 var going = false
-export var vitesse = 5
+export var vitesse = 500
 var role = "none"
 var safeZone = 200
 export (PackedScene) var Shadow
 export (PackedScene) var JumpingThing
 var g = 0
 var offset = 0
-var standardY 
+var standardY
 var trigger
 var is_a_trigger = false
 var is_hard = false
 export var triggerZone = 120
+
+export var hitType = "standard"
 
 export var speed = 400
 export var center = Vector2(990,520)
@@ -36,11 +38,13 @@ func _ready():
 func _process(delta):
 	if going:
 		var direction = objectif - position
-		if direction.length() <= vitesse:
+		if direction.length() <= vitesse*delta:
 			going = false
+			position.x = objectif.x
+			position.y = objectif.y
 		else:
 			direction = direction.normalized() * vitesse
-			position += direction
+			position += direction * delta
 	elif role == "ellebore":
 		if state < 0 and state > -0.5:
 			if strat == 0:
@@ -69,7 +73,7 @@ func _process(delta):
 			cible = get_tree().get_nodes_in_group('Player')[0].position
 			cible -= position
 			if cible.length() <= deathRadius:
-				get_node("/root/General").mort()
+				get_node("/root/General/ObjetsTable/Croissant").die()
 			for i in range(n):
 				var s = Shadow.instance()
 				s.position = oldOne + i*vect
@@ -81,7 +85,7 @@ func _process(delta):
 			cible = get_tree().get_nodes_in_group('Player')[0].position
 			cible -= position
 			if cible.length() <= deathRadius:
-				get_node("/root/General").mort()
+				get_node("/root/General/ObjetsTable/Croissant").die()
 			cible = cible.normalized()
 			position += cible * delta * 500
 			if state < -1.1:
@@ -142,6 +146,14 @@ func _process(delta):
 		if state <= 0:
 			role = "falling"
 			state = 1.5
+	elif role == "shakeABit":
+		$Sprite.scale.x = 1 + sin(state*15)*(state*0.2)
+		$Sprite.scale.y = 1 - sin(state*15)*(state*0.2)
+		state -= delta
+		if state <= 0:
+			role = "none"
+			state = 0
+			$Sprite.scale.y = 1
 	elif role == "falling":
 		$Sprite.rotation += delta*state
 		state += delta*2
@@ -156,8 +168,8 @@ func _process(delta):
 				get_node("/root/General").start_event(trigger)
 				get_node("/root/General").end_event(trigger)
 				de_trigger()
-		
-		
+
+
 func new_dir():
 	var direction
 	var dist = (position - center)
@@ -179,7 +191,7 @@ func goTo(x,y):
 	going = true
 	objectif.x = x
 	objectif.y = y
-	
+
 func new_trigger(trig):
 	trigger = trig
 	is_a_trigger = true
@@ -193,3 +205,11 @@ func de_trigger():
 	is_a_trigger = false
 	is_hard = false
 
+func isHit():
+	if hitType == "cafe":
+		$AnimatedSprite.burst()
+		state = 0.8
+		role = "shakeABit"
+	elif hitType == "theiere":
+		state = 0.4 
+		role = "shakeABit"

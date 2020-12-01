@@ -1,0 +1,264 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://images/non_gameplay/savane_general.png" type="Texture" id=1]
+[ext_resource path="res://BackGround.gd" type="Script" id=2]
+[ext_resource path="res://fonts/settings.tres" type="DynamicFont" id=3]
+[ext_resource path="res://settingsTitre.gd" type="Script" id=4]
+[ext_resource path="res://settingsLabel.gd" type="Script" id=5]
+[ext_resource path="res://images/settings/sound5.png" type="Texture" id=6]
+[ext_resource path="res://images/settings/sound0.png" type="Texture" id=7]
+[ext_resource path="res://images/settings/sound1.png" type="Texture" id=8]
+[ext_resource path="res://images/settings/sound3.png" type="Texture" id=9]
+[ext_resource path="res://images/settings/sound4.png" type="Texture" id=10]
+[ext_resource path="res://images/settings/sound2.png" type="Texture" id=11]
+[ext_resource path="res://images/settings/arrow.png" type="Texture" id=12]
+[ext_resource path="res://musiques/kallypse/settings.ogg" type="AudioStream" id=13]
+[ext_resource path="res://voices/kallypse/settings/special_take.ogg" type="AudioStream" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+} ]
+
+[node name="Settings" type="Node2D"]
+
+[node name="BackGround" type="Sprite" parent="." index="0"]
+
+position = Vector2( 718.544, 110.326 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Titre" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 721.0
+margin_bottom = 76.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Les options, c'est bon !"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 4 )
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 511.0
+margin_top = 424.0
+margin_right = 924.0
+margin_bottom = 658.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Musique :
+Voix :
+Sous-Titres : "
+align = 2
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 5 )
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Volume0" type="AnimatedSprite" parent="Label" index="0"]
+
+position = Vector2( 535.763, 18.5388 )
+scale = Vector2( 0.252646, 0.188487 )
+frames = SubResource( 1 )
+animation = "0"
+
+[node name="Volume1" type="AnimatedSprite" parent="Label" index="1"]
+
+position = Vector2( 538.328, 102.342 )
+scale = Vector2( 0.252646, 0.17179 )
+frames = SubResource( 1 )
+animation = "0"
+
+[node name="Sprite0" type="Sprite" parent="Label" index="2"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( 32.4134, 34.1715 )
+scale = Vector2( 0.177545, 0.177545 )
+texture = ExtResource( 12 )
+
+[node name="Sprite4" type="Sprite" parent="Label/Sprite0" index="0"]
+
+position = Vector2( 3693.02, -88.8298 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite1" type="Sprite" parent="Label" index="3"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( 103.56, 111.15 )
+scale = Vector2( 0.177545, 0.177545 )
+texture = ExtResource( 12 )
+
+[node name="Sprite4" type="Sprite" parent="Label/Sprite1" index="0"]
+
+position = Vector2( 3259.45, -62.5525 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="Label" index="4"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( -18.9057, 189.295 )
+scale = Vector2( 0.177545, 0.177545 )
+texture = ExtResource( 12 )
+
+[node name="Sprite4" type="Sprite" parent="Label/Sprite2" index="0"]
+
+position = Vector2( 4140.56, 43.6221 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Label" type="Label" parent="Label" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -123.0
+margin_top = 288.0
+margin_right = 815.0
+margin_bottom = 443.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Test des configurations
+Retour"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Sprite3" type="Sprite" parent="Label" index="6"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( -65.6702, 317.864 )
+scale = Vector2( 0.177545, 0.177545 )
+texture = ExtResource( 12 )
+
+[node name="Sprite4" type="Sprite" parent="Label/Sprite3" index="0"]
+
+position = Vector2( 4668.9, 33.8892 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite4" type="Sprite" parent="Label" index="7"]
+
+editor/display_folded = true
+visible = false
+position = Vector2( 173.141, 399.668 )
+scale = Vector2( 0.177545, 0.177545 )
+texture = ExtResource( 12 )
+
+[node name="Sprite4" type="Sprite" parent="Label/Sprite4" index="0"]
+
+position = Vector2( 2013.7, 22.918 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="Label" index="8"]
+
+stream = ExtResource( 13 )
+volume_db = -80.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="VoicePlayer" type="AudioStreamPlayer" parent="Label" index="9"]
+
+stream = ExtResource( 14 )
+volume_db = -80.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="SousTitres" type="Label" parent="Label" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 440.0
+margin_top = 162.0
+margin_right = 671.0
+margin_bottom = 238.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Type 0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+

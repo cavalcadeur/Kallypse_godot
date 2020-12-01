@@ -1,14 +1,61 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Table.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Croissant.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objets/theiere.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objets/theiere.gd" type="Script" id=4]
 [ext_resource path="res://objets/cafe.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objets/Citron.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objets/Tasse.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objets/Corbeille.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objets/Carafe.tscn" type="PackedScene" id=9]
+[ext_resource path="res://images/imgLab/fumeee/default0.png" type="Texture" id=6]
+[ext_resource path="res://images/imgLab/fumeee/default1.png" type="Texture" id=7]
+[ext_resource path="res://images/imgLab/fumeee/default2.png" type="Texture" id=8]
+[ext_resource path="res://images/imgLab/fumeee/default3.png" type="Texture" id=9]
+[ext_resource path="res://images/imgLab/fumeee/default4.png" type="Texture" id=10]
+[ext_resource path="res://images/imgLab/fumeee/default5.png" type="Texture" id=11]
+[ext_resource path="res://images/imgLab/fumeee/default6.png" type="Texture" id=12]
+[ext_resource path="res://images/imgLab/fumeee/default7.png" type="Texture" id=13]
+[ext_resource path="res://images/imgLab/fumeee/default8.png" type="Texture" id=14]
+[ext_resource path="res://images/imgLab/fumeee/anim0.png" type="Texture" id=15]
+[ext_resource path="res://images/imgLab/fumeee/anim1.png" type="Texture" id=16]
+[ext_resource path="res://images/imgLab/fumeee/anim2.png" type="Texture" id=17]
+[ext_resource path="res://images/imgLab/fumeee/anim3.png" type="Texture" id=18]
+[ext_resource path="res://images/imgLab/fumeee/anim4.png" type="Texture" id=19]
+[ext_resource path="res://images/imgLab/fumeee/anim5.png" type="Texture" id=20]
+[ext_resource path="res://images/imgLab/fumeee/anim6.png" type="Texture" id=21]
+[ext_resource path="res://images/imgLab/fumeee/anim7.png" type="Texture" id=22]
+[ext_resource path="res://images/imgLab/fumeee/anim8.png" type="Texture" id=23]
+[ext_resource path="res://images/imgLab/fumeee/anim9.png" type="Texture" id=24]
+[ext_resource path="res://images/imgLab/fumeee/anim10.png" type="Texture" id=25]
+[ext_resource path="res://images/imgLab/fumeee/anim11.png" type="Texture" id=26]
+[ext_resource path="res://images/imgLab/fumeee/anim12.png" type="Texture" id=27]
+[ext_resource path="res://images/imgLab/fumeee/anim13.png" type="Texture" id=28]
+[ext_resource path="res://images/imgLab/fumeee/test1.png" type="Texture" id=29]
+[ext_resource path="res://images/imgLab/fumeee/test2.png" type="Texture" id=30]
+[ext_resource path="res://images/imgLab/fumeee/test3.png" type="Texture" id=31]
+[ext_resource path="res://AnimatedSprite.gd" type="Script" id=32]
+[ext_resource path="res://objets/Citron.tscn" type="PackedScene" id=33]
+[ext_resource path="res://objets/Tasse.tscn" type="PackedScene" id=34]
+[ext_resource path="res://objets/Corbeille.tscn" type="PackedScene" id=35]
+[ext_resource path="res://objets/Carafe.tscn" type="PackedScene" id=36]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "burst",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "test",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
 
 [node name="ObjetsTable" type="YSort"]
 
@@ -34,74 +81,72 @@ position = Vector2( 947.101, 610.34 )
 input_pickable = true
 script = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
-vitesse = 1
-speed = 400
-center = Vector2( 990, 520 )
-radiusX = 600
-radiusY = 300
-deathRadius = 45
+hitType = "theiere"
 
 [node name="Cafe" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 1280.05, 245.779 )
 _sections_unfolded = [ "Transform" ]
-vitesse = 2
-JumpingThing = null
-speed = 400
-center = Vector2( 990, 520 )
-radiusX = 600
-radiusY = 300
-deathRadius = 45
+vitesse = 650
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Cafe" index="2"]
+
+position = Vector2( 1.97937, -272.754 )
+scale = Vector2( 0.95, 1 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 7
+playing = true
+script = ExtResource( 32 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Cafe2" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 599.13, 750.255 )
 _sections_unfolded = [ "Transform" ]
-vitesse = 2
+vitesse = 650
 Shadow = null
-JumpingThing = null
-speed = 400
-center = Vector2( 990, 520 )
-radiusX = 600
-radiusY = 300
-deathRadius = 45
 
-[node name="Citron" parent="." index="5" instance=ExtResource( 6 )]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Cafe2" index="2"]
+
+position = Vector2( 0.602478, -268.875 )
+scale = Vector2( 0.95, 1 )
+frames = SubResource( 1 )
+animation = "default"
+playing = true
+script = ExtResource( 32 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Citron" parent="." index="5" instance=ExtResource( 33 )]
 
 position = Vector2( 640.963, 282.215 )
 deathRadius = 55
 
-[node name="Tasse" parent="." index="6" instance=ExtResource( 7 )]
+[node name="Tasse" parent="." index="6" instance=ExtResource( 34 )]
 
 position = Vector2( 361.14, 401.798 )
 _sections_unfolded = [ "Transform" ]
-vitesse = 1
-deathRadius = 45
 
-[node name="Tasse2" parent="." index="7" instance=ExtResource( 7 )]
+[node name="Tasse2" parent="." index="7" instance=ExtResource( 34 )]
 
 position = Vector2( 1622.2, 672.101 )
 _sections_unfolded = [ "Transform" ]
 Shadow = null
-deathRadius = 45
 
-[node name="Corbeille" parent="." index="8" instance=ExtResource( 8 )]
+[node name="Corbeille" parent="." index="8" instance=ExtResource( 35 )]
 
 position = Vector2( 1497.18, 401.798 )
 _sections_unfolded = [ "Transform" ]
 Shadow = null
-JumpingThing = null
-speed = 400
-center = Vector2( 990, 520 )
-radiusX = 600
-radiusY = 300
-deathRadius = 45
 
-[node name="Carafe" parent="." index="9" instance=ExtResource( 9 )]
+[node name="Carafe" parent="." index="9" instance=ExtResource( 36 )]
 
 position = Vector2( 1327.57, 879.817 )
 _sections_unfolded = [ "Transform" ]
-vitesse = 2
 Shadow = null
+
+[connection signal="animation_finished" from="Cafe/AnimatedSprite" to="Cafe/AnimatedSprite" method="onEndAnim"]
+
+[connection signal="animation_finished" from="Cafe2/AnimatedSprite" to="Cafe2/AnimatedSprite" method="onEndAnim"]
 
 

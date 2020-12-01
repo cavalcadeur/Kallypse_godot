@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/noisette.png-9e4ba84a34221739107b54f379b5a91e.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/noisette.png"
-source_md5="a1d0764d723aa9e2372287585f84629e"
-
 dest_files=[ "res://.import/noisette.png-9e4ba84a34221739107b54f379b5a91e.stex" ]
-dest_md5="ccee257082047a18ef82df3863e5492d"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -7,10 +7,7 @@ path="res://.import/nuit_2.ogg-e7aff33016f8281ed52a06380e833ae5.oggstr"
 [deps]
 
 source_file="res://musiques/kallypse/nuit_2.ogg"
-source_md5="01af9a2f272742118932592d370b9a9f"
-
 dest_files=[ "res://.import/nuit_2.ogg-e7aff33016f8281ed52a06380e833ae5.oggstr" ]
-dest_md5="812bc2c29b971c0c68d83d6b639dfebf"
 
 [params]
 

@@ -8,7 +8,9 @@ func _ready():
 	scale = Vector2(0.01,0.01)
 
 func _process(delta):
-	scale *= 1.015
+	var power = floor(delta / 0.002)
+	
+	scale *= pow(1.015,power)
 	rotation += delta
 	if scale.x > 15:
 		queue_free()

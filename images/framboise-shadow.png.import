@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/framboise-shadow.png-8330b3ffd9854bfdd9cf64009280e864.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/framboise-shadow.png"
-source_md5="1ff834d091cb0dacf5a72a9f29caf676"
-
 dest_files=[ "res://.import/framboise-shadow.png-8330b3ffd9854bfdd9cf64009280e864.stex" ]
-dest_md5="0d03e522121274ec13e85220cdbda2cf"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

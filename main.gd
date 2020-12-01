@@ -24,6 +24,9 @@ var waiting = false
 var waited = 0
 var eventAfterWait = []
 var eventAfterJumpCrush = []
+var superGoto = -1
+
+var sound = []
 
 var savedScene
 
@@ -34,6 +37,7 @@ func charge(s):
 	jsonfile.open("res://histoires/" + str(s) + ".json", File.READ)
 	data = parse_json(jsonfile.get_as_text())
 	jsonfile.close()
+	readySound(data["dialogues"].size(),s)
 	jsonfile.open("res://textes/kallypse/" + str(s) + "-0.json",File.READ)
 	texteK = parse_json(jsonfile.get_as_text())
 	jsonfile.close()
@@ -46,8 +50,17 @@ func charge(s):
 	speaker = -1
 	speaking = true
 
+func readySound(n,s):
+	sound = []
+	s = str(s)
+	for i in range(n):
+		sound.append(0)
+		sound[i] = load("res://voices/kallypse/" + s + "/" + str(i) + ".ogg")
+
 func _ready():
 	randomize()
+	$MusicPlayer.volume_db = global.get_music_volume()
+	$VoicePlayer.volume_db = global.get_voice_volume()
 	charge(global.scene)
 	
 func _process(delta):
@@ -56,7 +69,15 @@ func _process(delta):
 			# On ne sait pas encore qui est en train de parler
 			speaker = data["dialogues"][dialogue][0]
 			nTexte = data["dialogues"][dialogue][1]
+			$VoicePlayer.set_stream(sound[dialogue])
+			$VoicePlayer.play()
 			timer = 0
+			if superGoto != -1:
+				if speaker == 0:
+					timer = texteK[nTexte][superGoto][0]
+				else:
+					timer = texteC[nTexte][superGoto][0]
+				superGoto = -1
 			$HUD/Kallypse.text = ""
 			$HUD/Cerise.text = ""
 			# Voilà ! Maintenant on sait et c'est bien plus propre
@@ -112,11 +133,13 @@ func end_event(evt):
 func start_event(evt):
 	for elem in evt:
 		var event = data["events"][elem]
-		if event[0] == "goto":
+		if event[0] == "goto" or event[0] == "superGoto":
 			dialogue = event[1]
-			event = data["dialogues"][dialogue][3]
-			start_event(event)
+			var evtt = data["dialogues"][dialogue][3]
+			start_event(evtt)
 			speaker = -1
+			if event[0] == "superGoto":
+				superGoto = event[2]
 		elif event[0] == "img":
 			$HUD/front_image.set_visible(true)
 			$HUD/front_image.set_texture(load("res://images/" + event[1] + ".png"))
@@ -129,6 +152,9 @@ func start_event(evt):
 			$ObjetsTable/Croissant.deactivate()
 		elif event[0] == "activateCroissant":
 			$ObjetsTable/Croissant.activate()
+		elif event[0] == "reviveCroissant":
+			$ObjetsTable/Croissant.activate()
+			$ObjetsTable/Croissant.revive()
 		elif event[0] == "waitKey":
 			waitedEvent = event[1]
 		elif event[0] == "framboise":
@@ -152,6 +178,7 @@ func start_event(evt):
 			get_node("ObjetsTable/" + event[1]).goTo(event[2],event[3])
 		elif event[0] == "giveRole":
 			get_node("ObjetsTable/" + event[1]).role = event[2]
+			get_node("ObjetsTable/" + event[1] + "/Sprite").modulate.a = 1
 			if event[2] == "jumpCrush":
 				eventAfterJumpCrush = event[3]
 		elif event[0] == "tuto_fleches":
@@ -178,6 +205,8 @@ func start_event(evt):
 			eventAfterWait = event[2]
 		elif event[0] == "moveTrigger":
 			$ObjetsTable/Croissant.moveTrigger(event[1])
+		elif event[0] == "deMoveTrigger":
+			$ObjetsTable/Croissant.deMoveTrigger()
 		elif event[0] == "addCerise":
 			var crcr = Shooter.instance()
 			crcr.position = Vector2(event[1],event[2])
@@ -219,22 +248,35 @@ func start_event(evt):
 			var pospole = objB.get_node("CollisionShape2D").position
 			objB.get_node("CollisionShape2D").position = objA.get_node("CollisionShape2D").position
 			objA.get_node("CollisionShape2D").position = pospole
+			
+			$Camera.TPmode()
 		elif event[0] == "stopRoll":
 			$ObjetsTable/Croissant.canRoll = false
 		elif event[0] == "startRoll":
 			$ObjetsTable/Croissant.canRoll = true
 		elif event[0] == "addPostCard":
 			global.add_postCard(event[1])
+		elif event[0] == "cardPoint":
+			if global.countCard() >= event[1]:
+				start_event(event[2])
+				end_event(event[2])
+		elif event[0] == "cardSeen":
+			if global.cardSeen(event[1]):
+				start_event(event[2])
+				end_event(event[2])
 			
 	
 func mort():
 	if data["mort"] == -1:
-		$ObjetsTable/Croissant.revive()
+		#$ObjetsTable/Croissant.revive()
 		return
 	dialogue = data["mort"]
 	var event = data["dialogues"][dialogue][3]
 	start_event(event)
 	speaker = -1
+	var jj = get_tree().get_nodes_in_group("JumpingThing")
+	for j in jj:
+		j.disappear(false)
 	
 	
 func shakeCamera():

@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/profB.png-293c6c575eab255845eafb16fa445934.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/profB.png"
-source_md5="e479ae81631b3a2d4c03d937103de6ac"
-
 dest_files=[ "res://.import/profB.png-293c6c575eab255845eafb16fa445934.stex" ]
-dest_md5="c5376a912b6989c3f3952cd6d81b17a5"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

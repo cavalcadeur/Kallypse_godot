@@ -7,10 +7,7 @@ path="res://.import/1.ogg-543f6653aaec2bb6e86c4ba5ea5d00b6.oggstr"
 [deps]
 
 source_file="res://voices/kallypse/1/backup/1.ogg"
-source_md5="374dd208d88926416ec82a2477c13c55"
-
 dest_files=[ "res://.import/1.ogg-543f6653aaec2bb6e86c4ba5ea5d00b6.oggstr" ]
-dest_md5="b6528863a7b1d2718749e56d5a6bc4a4"
 
 [params]
 

@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/corbeille.png-82934ef9c7d448a48347d62fdcf9cfbf.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/corbeille.png"
-source_md5="7fb8aafba3a530909b891ac6fda291bc"
-
 dest_files=[ "res://.import/corbeille.png-82934ef9c7d448a48347d62fdcf9cfbf.stex" ]
-dest_md5="399d1ce2e142f1c96d852bd1297b2794"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

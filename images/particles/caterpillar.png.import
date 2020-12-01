@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/caterpillar.png-ef398a5ec68760f8f3b5d61e3ade8206.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/particles/caterpillar.png"
-source_md5="e423c0817f50ee6c4e1cde9d250deaae"
-
 dest_files=[ "res://.import/caterpillar.png-ef398a5ec68760f8f3b5d61e3ade8206.stex" ]
-dest_md5="eff9b993de4effe70ff9c47944cf1a05"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

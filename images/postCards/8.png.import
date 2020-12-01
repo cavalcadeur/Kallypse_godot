@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/8.png-b71f0619ffb3ffa9fe8ad758108b4963.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/postCards/8.png"
-source_md5="6996606f79900f1c6f237f0023b629b9"
-
 dest_files=[ "res://.import/8.png-b71f0619ffb3ffa9fe8ad758108b4963.stex" ]
-dest_md5="902ebddd8cbda4788d00662bab88dd59"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

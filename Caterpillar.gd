@@ -22,7 +22,7 @@ func _process(delta):
 	rSpeed += float(randi()%10 - 5) / 40
 	rSpeed = clamp(rSpeed, - 0.15, 0.15)
 	for i in range(1,4):
-		pos[i] = (79 * pos[i] + pos[i-1])/80
+		pos[i] = (12 * pos[i] + pos[i-1])/13
 		get_node("Sprite" + str(i + 1)).position = pos[i] - pos[0]
 	if (position.x < -100):
 		position.x = 1950

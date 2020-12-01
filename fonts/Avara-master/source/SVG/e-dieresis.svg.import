@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/e-dieresis.svg-cd3e352d6bbec521a8a84bcb25f7cf74.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://fonts/Avara-master/source/SVG/e-dieresis.svg"
-source_md5="77931462835ccb9ef0f48206d2f357b6"
-
 dest_files=[ "res://.import/e-dieresis.svg-cd3e352d6bbec521a8a84bcb25f7cf74.stex" ]
-dest_md5="15289305a7578c95d977eac48c9eecb5"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

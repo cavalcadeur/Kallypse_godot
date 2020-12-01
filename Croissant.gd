@@ -21,6 +21,7 @@ var moveEvent = []
 var checkBuffer = 0
 export var checkBufferLimit = 10
 var canRoll = true
+var hitPoints = 2
 
 
 func _ready():
@@ -32,6 +33,32 @@ func _ready():
 	standardY = $Sprite.position.y
 	standardPos = position
 	
+
+func process_die(delta):
+	var velocity = Vector2()  # The player's movement vector.
+	if Input.is_action_pressed("ui_right"):
+		velocity.x += 1
+	if Input.is_action_pressed("ui_left"):
+		velocity.x -= 1
+	if Input.is_action_pressed("ui_down"):
+		velocity.y += 1
+	if Input.is_action_pressed("ui_up"):
+		velocity.y -= 1
+	velocity *= speed
+	var collision = move_and_collide(velocity*delta)
+	if collision:
+		var compos = collision.remainder.slide(collision.normal)
+		position += compos
+	nCr -= delta
+	if nCr <= 0:
+		nCr = 0
+		state = 0
+		$Sprite.set_visible(true)
+	elif int(nCr*10)%2 == 0:
+		$Sprite.set_visible(false)
+	else:
+		$Sprite.set_visible(true)
+		
 
 func process_norm(delta):
 	var velocity = Vector2()  # The player's movement vector.
@@ -63,6 +90,7 @@ func process_norm(delta):
 func process_roll(delta):
 	var boobool = test_move(transform,dir * delta)
 	if boobool:
+		move_and_collide(dir*delta).collider.isHit()
 		dir *= -1.2
 		state = 2
 		nCr = 0
@@ -93,6 +121,7 @@ func process_fall(delta):
 	else:
 		state = 0
 		$Sprite.position.y = standardY
+		get_node("/root/General/Camera").TPmode()
 		position = standardPos
 		g = 0
 		onTable = true
@@ -111,6 +140,8 @@ func _physics_process(delta):
 		process_crush(delta)
 	elif state == 5:
 		process_fall(delta)
+	elif state == 6:
+		process_die(delta)
 
 func deactivate():
 	state = 3
@@ -124,11 +155,22 @@ func activate():
 	#$Sprite/Camera2D.activate()
 
 func die():
-	deactivate()
-	get_tree().get_nodes_in_group('chef')[0].mort()
+	if state == 5 or state == 6:
+		return
+	if hitPoints == 2:
+		state = 6
+		r = 0
+		$Sprite.rotation = 0
+		hitPoints -= 1
+		nCr = 2
+		$Sprite.texture = load("res://images/croissant2.png")
+	else:
+		deactivate()
+		get_tree().get_nodes_in_group('chef')[0].mort()
 	
 func revive():
-	activate()
+	hitPoints = 2
+	$Sprite.texture = load("res://images/croissant.png")
 
 func _on_Croissant_hit():
 	dir *= -1
@@ -147,6 +189,10 @@ func fall():
 func moveTrigger(ev):
 	checkMove = true
 	moveEvent = ev
+	
+func deMoveTrigger():
+	checkMove = false
+	moveEvent = []
 	
 	
 	

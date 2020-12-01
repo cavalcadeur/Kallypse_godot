@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/icon160.png-f526def8729cea52b9148a350fb03719.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/icon160.png"
-source_md5="8461c3b9d952816797206bcb3e1196b3"
-
 dest_files=[ "res://.import/icon160.png-f526def8729cea52b9148a350fb03719.stex" ]
-dest_md5="8a1697c3acec8067beda06e2388a4bd6"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

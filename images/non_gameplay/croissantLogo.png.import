@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/croissantLogo.png-da3f7f904fd427c6902bf1758714342f.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/non_gameplay/croissantLogo.png"
-source_md5="cc5c99086b79dd335e6b1123524d51d1"
-
 dest_files=[ "res://.import/croissantLogo.png-da3f7f904fd427c6902bf1758714342f.stex" ]
-dest_md5="b10c86a46a12de267129e9b5b8d151c3"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

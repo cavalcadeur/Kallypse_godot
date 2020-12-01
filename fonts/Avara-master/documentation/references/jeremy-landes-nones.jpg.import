@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/jeremy-landes-nones.jpg-557233c3f506064afbb4648dffb3b0f5.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://fonts/Avara-master/documentation/references/jeremy-landes-nones.jpg"
-source_md5="8d5e0563bf97906da680807a7e45a003"
-
 dest_files=[ "res://.import/jeremy-landes-nones.jpg-557233c3f506064afbb4648dffb3b0f5.stex" ]
-dest_md5="ec4992049e393172a5a5a10a61d60d02"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

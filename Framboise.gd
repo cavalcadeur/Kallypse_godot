@@ -101,4 +101,11 @@ func _on_Framboise_body_entered(body):
 			state = 2
 			n = 0
 			direction *= -0.5
-		body.die()
+		else:
+			var expl = Explosion.instance()
+			expl.position = position
+			expl.emitting = true
+			expl.one_shot = true
+			get_tree().get_nodes_in_group('SortY')[0].add_child(expl)
+			body.die()
+			queue_free()

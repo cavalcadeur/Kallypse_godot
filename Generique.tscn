@@ -11,15 +11,14 @@
 [ext_resource path="res://images/non_gameplay/credits_roll/credit3.png" type="Texture" id=9]
 [ext_resource path="res://images/non_gameplay/credits_roll/credit4.png" type="Texture" id=10]
 [ext_resource path="res://images/non_gameplay/credits_roll/credit5.png" type="Texture" id=11]
-[ext_resource path="res://musiques/kallypse/generique.ogg" type="AudioStream" id=12]
+[ext_resource path="res://musiques/kallypse/Kallypse - Final Fanfare.ogg" type="AudioStream" id=12]
 
 [sub_resource type="GDScript" id=1]
-
 script/source = "extends Node2D
 
 var time
 var index = 0
-var events = [[0,\"credit\",0],[13,\"credit\",0],[15,\"credit\",1],[15.4,\"framboise\"],[16,\"framboise\"],[16.2,\"framboise\"],[17.6,\"framboise\"],[18.1,\"framboise\"],[19,\"framboise\"],[19.4,\"framboise\"],[20,\"framboise\"],[20.2,\"framboise\"],[21,\"framboise\"],[21.5,\"framboise\"],[22.1,\"framboise\"],[22.6,\"framboise\"],[23,\"credit\",1],[24.6,\"expCircle\",0.5,0.5],[25,\"credit\",2],[33,\"credit\",2],[34,\"expCircle\",0.3,0.4],[34.2,\"expCircle\",0.7,0.8],[34.4,\"expCircle\",0.2,0.7],[35,\"credit\",3],[43,\"credit\",3],[45,\"credit\",4],[58,\"credit\",4],[60,\"credit\",5],[80,\"credit\",5],[10000]]
+var events = [[0,\"credit\",0],[13,\"credit\",0],[15,\"credit\",1],[15.4,\"framboise\"],[16,\"framboise\"],[16.2,\"framboise\"],[17.6,\"framboise\"],[18.1,\"framboise\"],[19,\"framboise\"],[19.4,\"framboise\"],[20,\"framboise\"],[20.2,\"framboise\"],[21,\"framboise\"],[21.5,\"framboise\"],[22.1,\"framboise\"],[22.6,\"framboise\"],[23,\"credit\",1],[24.6,\"expCircle\",0.5,0.5],[25,\"credit\",2],[33,\"credit\",2],[34,\"expCircle\",0.3,0.4],[34.2,\"expCircle\",0.7,0.8],[34.4,\"expCircle\",0.2,0.7],[35,\"credit\",3],[43,\"credit\",3],[45,\"credit\",4],[58,\"credit\",4],[60,\"credit\",5],[80,\"credit\",5],[82,\"fin\"],[10000,\"fin\"]]
 export (PackedScene) var Hanabi
 export (PackedScene) var Prop
 export (PackedScene) var ExpCircle
@@ -70,6 +69,9 @@ func makeEvent(evt):
 			hanabi.position.x = randi() % int(scrSize.x)
 			hanabi.goal = scrSize.y + 200
 		add_child(hanabi)
+	elif evt[1] == \"fin\":
+		get_tree().change_scene(\"res://Menu.tscn\")
+		return
 	elif evt[1] == \"propaganda\":
 		var prop = Prop.instance()
 		prop.position = get_viewport_rect().size
@@ -121,10 +123,10 @@ func insert_evt(evt):
 	
 	
 	
-	"
+	
+"
 
 [sub_resource type="GDScript" id=2]
-
 script/source = "extends \"res://Credit0.gd\"
 
 # class member variables go here, for example:
@@ -143,7 +145,6 @@ func _ready():
 "
 
 [sub_resource type="GDScript" id=3]
-
 script/source = "extends \"res://Credit0.gd\"
 
 # class member variables go here, for example:
@@ -162,7 +163,6 @@ func _ready():
 "
 
 [sub_resource type="GDScript" id=4]
-
 script/source = "extends \"res://Credit0.gd\"
 
 # class member variables go here, for example:
@@ -181,7 +181,6 @@ func _ready():
 "
 
 [sub_resource type="GDScript" id=5]
-
 script/source = "extends \"res://Credit0.gd\"
 
 # class member variables go here, for example:
@@ -200,7 +199,6 @@ func _ready():
 "
 
 [sub_resource type="GDScript" id=6]
-
 script/source = "extends \"res://Credit0.gd\"
 
 # class member variables go here, for example:
@@ -219,78 +217,53 @@ func _ready():
 "
 
 [node name="Generique" type="Node2D"]
-
 script = SubResource( 1 )
 Hanabi = ExtResource( 1 )
 Prop = ExtResource( 2 )
 ExpCircle = ExtResource( 3 )
 Croissant = ExtResource( 4 )
 
-[node name="Polygon2D" type="Polygon2D" parent="." index="0"]
-
+[node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2( -4.42603, -4.42603 )
-polygon = PoolVector2Array( -485.476, 1452.18, 2810.12, 1569.88, 2868.97, -617.383, -671.834, -744.892 )
-uv = PoolVector2Array(  )
 color = Color( 0.282353, 0.647059, 0.870588, 1 )
-vertex_colors = PoolColorArray(  )
-offset = Vector2( 0, 0 )
-antialiased = false
-texture = null
-texture_offset = Vector2( 0, 0 )
-texture_scale = Vector2( 1, 1 )
-texture_rotation_degrees = 0.0
-invert_enable = false
-invert_border = 100.0
+polygon = PoolVector2Array( -485.476, 1452.18, 2810.12, 1569.88, 2868.97, -617.383, -671.834, -744.892 )
 
-[node name="Credit0" type="Sprite" parent="." index="1"]
-
+[node name="Credit0" type="Sprite" parent="."]
 visible = false
 position = Vector2( 938.314, 500.139 )
 texture = ExtResource( 5 )
 script = ExtResource( 6 )
-_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Credit1" type="Sprite" parent="." index="2"]
-
+[node name="Credit1" type="Sprite" parent="."]
 visible = false
 position = Vector2( 948.075, 535.928 )
 texture = ExtResource( 7 )
 script = SubResource( 2 )
 
-[node name="Credit2" type="Sprite" parent="." index="3"]
-
+[node name="Credit2" type="Sprite" parent="."]
 visible = false
 position = Vector2( 938.314, 500.139 )
 texture = ExtResource( 8 )
 script = SubResource( 3 )
 
-[node name="Credit3" type="Sprite" parent="." index="4"]
-
+[node name="Credit3" type="Sprite" parent="."]
 visible = false
 position = Vector2( 983.863, 529.421 )
 texture = ExtResource( 9 )
 script = SubResource( 4 )
 
-[node name="Credit4" type="Sprite" parent="." index="5"]
-
+[node name="Credit4" type="Sprite" parent="."]
 visible = false
 position = Vector2( 938.314, 500.139 )
 texture = ExtResource( 10 )
 script = SubResource( 5 )
 
-[node name="Credit5" type="Sprite" parent="." index="6"]
-
+[node name="Credit5" type="Sprite" parent="."]
 visible = false
 position = Vector2( 938.314, 500.139 )
 texture = ExtResource( 11 )
 script = SubResource( 6 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="7"]
-
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
-volume_db = 0.0
 autoplay = true
-mix_target = 0
-bus = "Master"
-
-

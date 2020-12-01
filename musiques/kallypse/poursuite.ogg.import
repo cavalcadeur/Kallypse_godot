@@ -7,10 +7,7 @@ path="res://.import/poursuite.ogg-b9b61c52bcfe82306a32558d4b948ac7.oggstr"
 [deps]
 
 source_file="res://musiques/kallypse/poursuite.ogg"
-source_md5="e92b12e6e80ed8f51ad6a765d4515352"
-
 dest_files=[ "res://.import/poursuite.ogg-b9b61c52bcfe82306a32558d4b948ac7.oggstr" ]
-dest_md5="ee9ef57efd1fc1c79cd43ebc923a4b3a"
 
 [params]
 

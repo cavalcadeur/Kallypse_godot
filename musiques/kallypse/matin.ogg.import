@@ -7,10 +7,7 @@ path="res://.import/matin.ogg-7703f70a3ae004b6dd90d69ace8440dd.oggstr"
 [deps]
 
 source_file="res://musiques/kallypse/matin.ogg"
-source_md5="27b15d1d854d5c331d8bba971ee9d177"
-
 dest_files=[ "res://.import/matin.ogg-7703f70a3ae004b6dd90d69ace8440dd.oggstr" ]
-dest_md5="147ba0b9ff1113bdc0f1dc3aae7c29c5"
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://postcards.gd" type="Script" id=1]
 [ext_resource path="res://images/imgLab/non-gameplay/savane_general.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://images/postCards/6.png" type="Texture" id=14]
 [ext_resource path="res://images/postCards/7.png" type="Texture" id=15]
 [ext_resource path="res://images/postCards/8.png" type="Texture" id=16]
+[ext_resource path="res://images/postCards/9.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -148,5 +149,10 @@ texture = ExtResource( 15 )
 
 visible = false
 texture = ExtResource( 16 )
+
+[node name="card9" type="Sprite" parent="." index="13"]
+
+visible = false
+texture = ExtResource( 17 )
 
 

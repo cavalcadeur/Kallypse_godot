@@ -15,18 +15,19 @@ func _ready():
 	# Initialization here
 	global.load_game()
 	canGo = false
+	global.ready_theme()
 
 func _process(delta):
 	var screen_size = get_viewport_rect().size
 	var rapport = screen_size.x / 1800
 	set_scale(Vector2(rapport,rapport))
-	set_position(Vector2((screen_size.x - rapport*200) * 0.5,screen_size.y * 0.65))
-	for i in range(3):
+	set_position(Vector2((screen_size.x - rapport*200) * 0.5,screen_size.y * 0.55))
+	for i in range(4):
 		get_node("Menu" + str(i)).set_visible((i == value))
 	if Input.is_action_pressed("ui_down"):
 		velocity = 1
 	elif Input.is_action_pressed("ui_up"):
-		velocity = 2
+		velocity = 3
 	else:
 		wait = buffer
 		
@@ -34,18 +35,23 @@ func _process(delta):
 	if velocity > 0:
 		if wait >= buffer:
 			wait = 0
-			value = (value+velocity)%3
+			value = (value+velocity)%4
 		velocity = 0
 	
 	if Input.is_action_pressed("ui_select"):
 		if not canGo:
 			return
 		if value == 0:
-			get_tree().change_scene("res://main.tscn")
-		elif value == 2:
+			if Input.is_action_pressed("ui_cancel"):
+				get_tree().change_scene("res://main.tscn")
+			else:
+				get_tree().change_scene("res://Intro.tscn")
+		elif value == 3:
 			get_tree().quit()
 		elif value == 1:
 			get_tree().change_scene("res://postcards.tscn")
+		elif value == 2:
+			get_tree().change_scene("res://settings.tscn")
 	else:
 		canGo = true
 			

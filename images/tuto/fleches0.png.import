@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/fleches0.png-e46d7916f88dcb7d08b8786108517dfd.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/tuto/fleches0.png"
-source_md5="8104b4c580f382081f850e4e210c6aac"
-
 dest_files=[ "res://.import/fleches0.png-e46d7916f88dcb7d08b8786108517dfd.stex" ]
-dest_md5="66440620ef6d107485749e8a851f6687"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

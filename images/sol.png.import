@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/sol.png-ec2790721c4e513e8c25e7b3e91d13e3.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/sol.png"
-source_md5="727fa5ac34256a4652789fb1ce85c8e5"
-
 dest_files=[ "res://.import/sol.png-ec2790721c4e513e8c25e7b3e91d13e3.stex" ]
-dest_md5="d8361c64e9f87ddff8dc9fce1ccc9974"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

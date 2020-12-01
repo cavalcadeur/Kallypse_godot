@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/rocherA.png-5e71838b7bc111ebe4c889d7c6e055fe.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/rocherA.png"
-source_md5="030af96bd6d71648efe9d6781f142f20"
-
 dest_files=[ "res://.import/rocherA.png-5e71838b7bc111ebe4c889d7c6e055fe.stex" ]
-dest_md5="7a4db5e9e0ef2c7aa3fa5ccee5c499bc"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

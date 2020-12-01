@@ -24,7 +24,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_up"):
 		velocity += 1
 	if Input.is_action_pressed("ui_select") and shootBuffer <= 0:
-		shootBuffer = 0.1
+		shootBuffer = 0.2
 		var f = Framb.instance()
 		f.initializing = false
 		f.position = position + 50*Vector2(cos(r),sin(r) + 0.3)

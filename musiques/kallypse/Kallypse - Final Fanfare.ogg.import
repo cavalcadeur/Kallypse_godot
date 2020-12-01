@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Kallypse - Final Fanfare.ogg-1ff49280dae9c40256320f40f9822edf.oggstr"
+
+[deps]
+
+source_file="res://musiques/kallypse/Kallypse - Final Fanfare.ogg"
+dest_files=[ "res://.import/Kallypse - Final Fanfare.ogg-1ff49280dae9c40256320f40f9822edf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -16,7 +16,7 @@
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Camera.gd" type="Script" id=15]
 
-[node name="General" type="Node" groups=[
+[node name="General" type="Node" index="0" groups=[
 "chef",
 ]]
 
@@ -31,7 +31,6 @@ Shooter = ExtResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -80,7 +79,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="BackGround3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3" index="0"]
 
-position = Vector2( 883.459, -68.8616 )
+position = Vector2( 770.043, -68.8616 )
 scale = Vector2( 1.2683, 1.2683 )
 texture = ExtResource( 11 )
 
@@ -108,15 +107,14 @@ speed = 330
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." index="6"]
 
 stream = null
-volume_db = 0.0
+volume_db = -17.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
 [node name="Camera" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
-position = Vector2( 21.4284, 1.89074 )
+position = Vector2( 940.984, 441.793 )
 script = ExtResource( 15 )
 _sections_unfolded = [ "Transform" ]
 center = Vector2( 940, 300 )
@@ -135,7 +133,7 @@ limit_bottom = 1000
 limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
-smoothing_enabled = true
+smoothing_enabled = false
 smoothing_speed = 10.0
 offset_v = 0.0
 offset_h = 0.0
@@ -165,5 +163,13 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
+
+[node name="VoicePlayer" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = null
+volume_db = 24.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

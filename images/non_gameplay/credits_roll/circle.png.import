@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/circle.png-ca1406b1bb2c621ae570bcd09a138b6a.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://images/non_gameplay/credits_roll/circle.png"
-source_md5="dcb60934b8d9cff4fb2e2dfedf0c8c90"
-
 dest_files=[ "res://.import/circle.png-ca1406b1bb2c621ae570bcd09a138b6a.stex" ]
-dest_md5="49e1ebf319d7f1cc99fbaff381d54a1e"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

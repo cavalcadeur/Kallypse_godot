@@ -13,7 +13,7 @@ func _ready():
 	if global.postCards[0]:
 		$Current.texture = getImg(0)
 	else:
-		$Current.texture = getImg(8)
+		$Current.texture = getImg(9)
 
 func _process(delta):
 	if animation == 0:
@@ -24,11 +24,11 @@ func _process(delta):
 			modif -= 1
 		if modif != 0:
 			animation = animLen
-			newImg = (current + modif + 8)%8
+			newImg = (current + modif + 9)%9
 			if global.postCards[newImg]:
 				$Next.texture = getImg(newImg)
 			else:
-				$Next.texture = getImg(8)
+				$Next.texture = getImg(9)
 			$Next.position.x = get_viewport_rect().size.x * (1/2 + modif)
 	else:
 		animation -= delta
@@ -39,7 +39,7 @@ func _process(delta):
 			if global.postCards[newImg]:
 				$Current.texture = getImg(newImg)
 			else:
-				$Current.texture = getImg(8)
+				$Current.texture = getImg(9)
 			current = newImg
 			return
 		else:

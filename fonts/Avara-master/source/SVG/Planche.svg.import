@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/Planche.svg-7c04ab485de325a2003380f5e8bbe849.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://fonts/Avara-master/source/SVG/Planche.svg"
-source_md5="0bc915ca24fa7d737be08dfe1c4f698d"
-
 dest_files=[ "res://.import/Planche.svg-7c04ab485de325a2003380f5e8bbe849.stex" ]
-dest_md5="4d21bb71aa46a04bbf616df668bb5f4f"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
