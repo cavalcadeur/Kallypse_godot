@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/26.ogg-cd908611a9786908c8441cd34d0bd74c.oggstr"
+
+[deps]
+
+source_file="res://voices/kallypse/6/26.ogg"
+dest_files=[ "res://.import/26.ogg-cd908611a9786908c8441cd34d0bd74c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -19,15 +19,10 @@
 [ext_resource path="res://images/postCards/9.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
-
 size = 65
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 6 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="GDScript" id=2]
-
 script/source = "extends Label
 
 # class member variables go here, for example:
@@ -51,108 +46,75 @@ func _process(delta):
 	else:
 		canGo = true"
 
-[node name="PostCards" type="Node2D" index="0"]
-
+[node name="PostCards" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="BackGround" type="Sprite" parent="." index="0"]
-
+[node name="BackGround" type="Sprite" parent="."]
 position = Vector2( 992.471, 73.4077 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
 
-[node name="Current" type="Sprite" parent="." index="1"]
-
+[node name="Current" type="Sprite" parent="."]
 script = ExtResource( 4 )
 
-[node name="Next" type="Sprite" parent="." index="2"]
-
+[node name="Next" type="Sprite" parent="."]
 script = ExtResource( 5 )
 
-[node name="Retour" type="Label" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Retour" type="Label" parent="."]
 margin_left = 657.0
 margin_top = 778.0
 margin_right = 877.0
 margin_bottom = 854.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 text = "Retour"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 script = SubResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="Retour" index="0"]
-
+[node name="Sprite" type="Sprite" parent="Retour"]
 position = Vector2( -39.1724, 34.2269 )
 scale = Vector2( 0.612845, 0.612845 )
 texture = ExtResource( 7 )
 
-[node name="Sprite" type="Sprite" parent="Retour/Sprite" index="0"]
-
+[node name="Sprite" type="Sprite" parent="Retour/Sprite"]
 position = Vector2( 488.346, 2.33643 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 7 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="card0" type="Sprite" parent="." index="4"]
-
+[node name="card0" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 8 )
 
-[node name="card1" type="Sprite" parent="." index="5"]
-
+[node name="card1" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 9 )
 
-[node name="card2" type="Sprite" parent="." index="6"]
-
+[node name="card2" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 10 )
 
-[node name="card3" type="Sprite" parent="." index="7"]
-
+[node name="card3" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 11 )
 
-[node name="card4" type="Sprite" parent="." index="8"]
-
+[node name="card4" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 12 )
 
-[node name="card5" type="Sprite" parent="." index="9"]
-
+[node name="card5" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 13 )
 
-[node name="card6" type="Sprite" parent="." index="10"]
-
+[node name="card6" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 14 )
 
-[node name="card7" type="Sprite" parent="." index="11"]
-
+[node name="card7" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 15 )
 
-[node name="card8" type="Sprite" parent="." index="12"]
-
+[node name="card8" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 16 )
 
-[node name="card9" type="Sprite" parent="." index="13"]
-
+[node name="card9" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 17 )
-
-
