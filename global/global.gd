@@ -29,7 +29,7 @@ func load_game():
 		scene = 1
 	else:
 		save_game.open("user://kallypseSave.save", File.READ)
-		scene = 14
+		scene = 666
 		postCards = parse_json(save_game.get_line())
 		settings = parse_json(save_game.get_line())
 		if postCards.size() == 8:
@@ -69,7 +69,7 @@ func get_music_volume():
 func get_voice_volume():
 	return volumeVoice[settings[1]]
 	
-func change_label(node):
+func change_label(_node):
 	return
 	#node.set_theme(t[settings[2]])
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cleptomane.ogg-7d95e567cc7b74d788e94466901ffecf.oggstr"
+
+[deps]
+
+source_file="res://musiques/kallypse/cleptomane.ogg"
+dest_files=[ "res://.import/cleptomane.ogg-7d95e567cc7b74d788e94466901ffecf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

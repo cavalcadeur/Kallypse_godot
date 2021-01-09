@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mature.ogg-40d69655195a5e6cd460ed271ae1a42f.oggstr"
+
+[deps]
+
+source_file="res://musiques/kallypse/mature.ogg"
+dest_files=[ "res://.import/mature.ogg-40d69655195a5e6cd460ed271ae1a42f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

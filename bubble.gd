@@ -4,8 +4,8 @@ var pos = Vector2(0,0)
 var s
 var state
 export var timeOut = 8
-export var factor = 1.01
-export var speedUp = -200
+export var factor = 1.1
+export var speedUp = -420
 
 func _ready():
 	state = 0
@@ -23,7 +23,7 @@ func _process(delta):
 			play()
 		set_scale(Vector2(s,s))
 	elif state == 2:
-		s /= 1.05
+		s /= 1.18
 		if s <= 0.01:
 			queue_free()
 		else:

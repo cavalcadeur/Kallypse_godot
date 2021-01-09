@@ -38,7 +38,6 @@
 [ext_resource path="res://objets/Carafe.tscn" type="PackedScene" id=36]
 
 [sub_resource type="SpriteFrames" id=1]
-
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
@@ -55,98 +54,68 @@ animations = [ {
 "name": "test",
 "speed": 5.0
 } ]
-_sections_unfolded = [ "Resource" ]
 
 [node name="ObjetsTable" type="YSort"]
 
-sort_enabled = true
-
-[node name="Table" parent="." index="0" groups=[
+[node name="Table" parent="." groups=[
 "Table",
 ] instance=ExtResource( 1 )]
-
 position = Vector2( 982.102, 133.825 )
 
-[node name="Croissant" parent="." index="1" instance=ExtResource( 2 )]
-
-position = Vector2( 826.898, 452.194 )
-_sections_unfolded = [ "Transform" ]
+[node name="Croissant" parent="." instance=ExtResource( 2 )]
+position = Vector2( 965.206, 528.166 )
 speed = 540
 rollSpeedMul = 1.7
 checkBufferLimit = 10
 
-[node name="Theiere" parent="." index="2" instance=ExtResource( 3 )]
-
+[node name="Theiere" parent="." instance=ExtResource( 3 )]
 position = Vector2( 947.101, 610.34 )
 input_pickable = true
 script = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
 hitType = "theiere"
 
-[node name="Cafe" parent="." index="3" instance=ExtResource( 5 )]
-
+[node name="Cafe" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1280.05, 245.779 )
-_sections_unfolded = [ "Transform" ]
 vitesse = 650
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Cafe" index="2"]
-
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Cafe"]
 position = Vector2( 1.97937, -272.754 )
 scale = Vector2( 0.95, 1 )
 frames = SubResource( 1 )
-animation = "default"
-frame = 7
+frame = 3
 playing = true
 script = ExtResource( 32 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Cafe2" parent="." index="4" instance=ExtResource( 5 )]
-
+[node name="Cafe2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 599.13, 750.255 )
-_sections_unfolded = [ "Transform" ]
 vitesse = 650
 Shadow = null
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Cafe2" index="2"]
-
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Cafe2"]
 position = Vector2( 0.602478, -268.875 )
 scale = Vector2( 0.95, 1 )
 frames = SubResource( 1 )
-animation = "default"
+frame = 5
 playing = true
 script = ExtResource( 32 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Citron" parent="." index="5" instance=ExtResource( 33 )]
-
+[node name="Citron" parent="." instance=ExtResource( 33 )]
 position = Vector2( 640.963, 282.215 )
 deathRadius = 55
 
-[node name="Tasse" parent="." index="6" instance=ExtResource( 34 )]
-
+[node name="Tasse" parent="." instance=ExtResource( 34 )]
 position = Vector2( 361.14, 401.798 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Tasse2" parent="." index="7" instance=ExtResource( 34 )]
-
+[node name="Tasse2" parent="." instance=ExtResource( 34 )]
 position = Vector2( 1622.2, 672.101 )
-_sections_unfolded = [ "Transform" ]
 Shadow = null
 
-[node name="Corbeille" parent="." index="8" instance=ExtResource( 35 )]
-
+[node name="Corbeille" parent="." instance=ExtResource( 35 )]
 position = Vector2( 1497.18, 401.798 )
-_sections_unfolded = [ "Transform" ]
 Shadow = null
 
-[node name="Carafe" parent="." index="9" instance=ExtResource( 36 )]
-
+[node name="Carafe" parent="." instance=ExtResource( 36 )]
 position = Vector2( 1327.57, 879.817 )
-_sections_unfolded = [ "Transform" ]
 Shadow = null
-
 [connection signal="animation_finished" from="Cafe/AnimatedSprite" to="Cafe/AnimatedSprite" method="onEndAnim"]
-
 [connection signal="animation_finished" from="Cafe2/AnimatedSprite" to="Cafe2/AnimatedSprite" method="onEndAnim"]
-
-

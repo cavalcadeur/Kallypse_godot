@@ -1,10 +1,8 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://postcards.gd" type="Script" id=1]
 [ext_resource path="res://images/imgLab/non-gameplay/savane_general.png" type="Texture" id=2]
 [ext_resource path="res://BackGround.gd" type="Script" id=3]
-[ext_resource path="res://Current.gd" type="Script" id=4]
-[ext_resource path="res://Next.gd" type="Script" id=5]
 [ext_resource path="res://fonts/Avara.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://images/croissant.png" type="Texture" id=7]
 [ext_resource path="res://images/postCards/0.png" type="Texture" id=8]
@@ -35,7 +33,7 @@ func _ready():
 	# Initialization here
 	canGo = false
 
-func _process(delta):
+func _process(_delta):
 	var screen_size = get_viewport_rect().size
 	var rapport = screen_size.x / 1800
 	set_scale(Vector2(rapport,rapport))
@@ -44,7 +42,8 @@ func _process(delta):
 		if canGo:
 			get_tree().change_scene(\"res://Menu.tscn\")
 	else:
-		canGo = true"
+		canGo = true
+"
 
 [node name="PostCards" type="Node2D"]
 script = ExtResource( 1 )
@@ -53,12 +52,6 @@ script = ExtResource( 1 )
 position = Vector2( 992.471, 73.4077 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
-
-[node name="Current" type="Sprite" parent="."]
-script = ExtResource( 4 )
-
-[node name="Next" type="Sprite" parent="."]
-script = ExtResource( 5 )
 
 [node name="Retour" type="Label" parent="."]
 margin_left = 657.0
@@ -80,39 +73,30 @@ scale = Vector2( -1, 1 )
 texture = ExtResource( 7 )
 
 [node name="card0" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 8 )
 
 [node name="card1" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 9 )
 
 [node name="card2" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 10 )
 
 [node name="card3" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 11 )
 
 [node name="card4" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 12 )
 
 [node name="card5" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 13 )
 
 [node name="card6" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 14 )
 
 [node name="card7" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 15 )
 
 [node name="card8" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 16 )
 
 [node name="card9" type="Sprite" parent="."]

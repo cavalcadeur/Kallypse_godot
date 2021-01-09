@@ -25,7 +25,7 @@ func _process(delta):
 		if shake > 0:
 			shake -= delta
 			position.x += sin(shake*100)*150
-			position.y += cos(shake*90)*90
+			position.y -= cos(shake*90)*100 + 20
 
 func shakeDatAss():
 	shake = 0.4

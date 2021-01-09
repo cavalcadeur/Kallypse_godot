@@ -9,7 +9,8 @@ var scrolling = 0.2
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
+	$Music.volume_db = global.get_music_volume()
+	$Music.play()
 
 func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):

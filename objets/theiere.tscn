@@ -6,29 +6,16 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
 [node name="Theiere" instance=ExtResource( 1 )]
-
 position = Vector2( 2.10522, -1.05264 )
 Shadow = null
 JumpingThing = ExtResource( 2 )
-speed = 400
-center = Vector2( 990, 520 )
-radiusX = 600
-radiusY = 300
-deathRadius = 45
 
 [node name="Sprite" parent="." index="0"]
-
 position = Vector2( -28.4211, -225.263 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-
 position = Vector2( 7.24124, -25.6319 )
 scale = Vector2( 18.1243, 2.834 )
 shape = SubResource( 1 )
-
-

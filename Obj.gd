@@ -30,6 +30,11 @@ var cible = null
 # var a = 2
 # var b = "textvar"
 
+func getRandomLocation():
+	var liste = [[360,400],[820,844],[1185,680],[900,300],[1325,353],[1735,520],[1465,840],[980,643],[966,350],[685,190]]
+	var h = randi() % len(liste)
+	return Vector2(liste[h][0],liste[h][1])
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -103,7 +108,7 @@ func _process(delta):
 		$Sprite.position.y = standardY + offset
 		if direction.length() <= safeZone or not onTable():
 			var oldOne = $Sprite.position + position
-			position = Vector2(randi() % 1500 + 250,randi() % 800 + 150)
+			position = getRandomLocation()
 			var vect = position + $Sprite.position - oldOne
 			var n = 5
 			vect = vect / n
@@ -164,7 +169,7 @@ func _process(delta):
 	elif is_a_trigger:
 		var target = get_tree().get_nodes_in_group('Player')[0].position
 		if (target - position).length() <= triggerZone:
-			if (not is_hard) or get_tree().get_nodes_in_group('Player')[0].state == 1:
+			if (not is_hard):
 				get_node("/root/General").start_event(trigger)
 				get_node("/root/General").end_event(trigger)
 				de_trigger()
@@ -177,7 +182,7 @@ func new_dir():
 	if dist <= 1:
 		var target = position - get_tree().get_nodes_in_group('Player')[0].position
 		target = target.normalized()
-		var r = (randi() % 414 - 207) / 100
+		var r = (randi() % 414 - 207) / 100.0
 		direction = Vector2(cos(r),sin(r)) + target
 		direction = direction.normalized()
 	else:
@@ -213,3 +218,8 @@ func isHit():
 	elif hitType == "theiere":
 		state = 0.4 
 		role = "shakeABit"
+		
+	if is_a_trigger && is_hard:
+		get_node("/root/General").start_event(trigger)
+		get_node("/root/General").end_event(trigger)
+		de_trigger()

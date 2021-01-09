@@ -4,37 +4,22 @@
 [ext_resource path="res://images/croissant.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
 extents = Vector2( 31.7106, 13.0755 )
 
 [node name="Croissant" type="KinematicBody2D" groups=[
 "Player",
 ]]
-
 input_pickable = true
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
 script = ExtResource( 1 )
-rollDuration = 0.4
 speed = 600
 rollSpeedMul = 1.8
-crushSpeed = 8
 checkBufferLimit = 20
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.35849, -51.2636 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Offset" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2.29268, -11.8889 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
 [connection signal="hit" from="." to="." method="_on_Croissant_hit"]
-
-

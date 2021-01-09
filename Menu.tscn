@@ -31,12 +31,15 @@ margin_right = 1222.0
 margin_bottom = 930.0
 custom_fonts/font = SubResource( 1 )
 text = "Jouer
-Bonus
+Galerie
 Options
 Quitter"
 align = 1
 valign = 1
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Menu0" type="Sprite" parent="Liste"]
 position = Vector2( 21.7766, 70.8132 )
@@ -49,12 +52,12 @@ scale = Vector2( -1, 1 )
 texture = ExtResource( 7 )
 
 [node name="Menu1" type="Sprite" parent="Liste"]
-position = Vector2( 5.97174, 145.534 )
+position = Vector2( -2.84772, 144.274 )
 scale = Vector2( 0.627645, 0.627645 )
 texture = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Liste/Menu1"]
-position = Vector2( 441.245, 2.85913 )
+position = Vector2( 479.386, 6.87402 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 7 )
 

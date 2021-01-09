@@ -22,6 +22,8 @@ var checkBuffer = 0
 export var checkBufferLimit = 10
 var canRoll = true
 var hitPoints = 2
+var ReviveParticle = load("res://exploseCroissant.tscn")
+var immuneToFall = 0
 
 
 func _ready():
@@ -132,6 +134,8 @@ func _process(delta):
 	pass
 
 func _physics_process(delta):
+	if immuneToFall > 0:
+		immuneToFall -= delta
 	if state == 0:
 		process_norm(delta)
 	elif state == 1:
@@ -158,9 +162,11 @@ func die():
 	if state == 5 or state == 6:
 		return
 	if hitPoints == 2:
-		state = 6
+		if state != 3:
+			state = 6
 		r = 0
 		$Sprite.rotation = 0
+		$Sprite.scale = Vector2(1,1)
 		hitPoints -= 1
 		nCr = 2
 		$Sprite.texture = load("res://images/croissant2.png")
@@ -169,6 +175,12 @@ func die():
 		get_tree().get_nodes_in_group('chef')[0].mort()
 	
 func revive():
+	if hitPoints < 2:
+		var particle = ReviveParticle.instance()
+		particle.emitting = true
+		particle.position.y = -50
+		particle.one_shot = true
+		add_child(particle)
 	hitPoints = 2
 	$Sprite.texture = load("res://images/croissant.png")
 
@@ -179,6 +191,8 @@ func _on_Croissant_body_entered(body):
 	dir *= -1
 
 func fall():
+	if immuneToFall > 0:
+		return
 	state = 5
 	onTable = false
 	if position.y < 500:
@@ -186,6 +200,11 @@ func fall():
 		$Sprite.position.y += position.y - YY
 		position.y = YY
 	 
+func purifyState():
+	state = 0
+	$Sprite.rotation = 0
+	$Sprite.scale = Vector2(1,1)
+	
 func moveTrigger(ev):
 	checkMove = true
 	moveEvent = ev

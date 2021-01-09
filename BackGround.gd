@@ -9,7 +9,7 @@ func _ready():
 	# Initialization here
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if is_visible():
 		screen_size = get_viewport_rect().size
 		var sizu = get_texture().get_size()

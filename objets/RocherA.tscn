@@ -4,28 +4,15 @@
 [ext_resource path="res://images/rocherA.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
 extents = Vector2( 13.92, 10 )
 
-[node name="RocherA" index="0" instance=ExtResource( 1 )]
-
-JumpingThing = null
-speed = 400
-center = Vector2( 990, 520 )
-radiusX = 600
-radiusY = 300
-deathRadius = 45
+[node name="RocherA" instance=ExtResource( 1 )]
 
 [node name="Sprite" parent="." index="0"]
-
 position = Vector2( 5.48334, -205.239 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-
 position = Vector2( -7.82152, -19.7369 )
 scale = Vector2( 38.3102, 2.69158 )
 shape = SubResource( 1 )
-
-

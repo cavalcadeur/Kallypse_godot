@@ -9,9 +9,8 @@ func _ready():
 	# Initialization here
 	pass
 
-func _process(delta):
+func _process(_delta):
 	var screen_size = get_viewport_rect().size
-	var sizu = get_texture().get_size()
 	var rapport = screen_size.x / 1920
 	set_scale(Vector2(rapport,rapport))
 	set_position(Vector2(screen_size.x * 0.5,screen_size.y * 0.3))

@@ -104,9 +104,9 @@ func _process(delta):
 			waitedEvent = []
 
 
-func find_time_id(timer,tex):
+func find_time_id(timu,tex):
 	for i in range(len(tex)):
-		if timer < tex[i][0]:
+		if timu < tex[i][0]:
 			return i - 1
 	return len(tex) - 1
 		
@@ -234,6 +234,7 @@ func start_event(evt):
 			var objA = get_node("ObjetsTable/" + event[1])
 			var objB = get_node("ObjetsTable/" + event[2])
 			var pospos = objB.position
+			objA.immuneToFall = 0.5
 			objB.position = objA.position
 			objA.position = pospos
 			var spritz = objB.get_node("Sprite").texture
@@ -248,6 +249,7 @@ func start_event(evt):
 			var pospole = objB.get_node("CollisionShape2D").position
 			objB.get_node("CollisionShape2D").position = objA.get_node("CollisionShape2D").position
 			objA.get_node("CollisionShape2D").position = pospole
+			objA.purifyState()
 			
 			$Camera.TPmode()
 		elif event[0] == "stopRoll":

@@ -20,11 +20,13 @@ export var radiusX = 600
 export var radiusY = 300
 
 func _ready():
+	
 	if initializing:
+		$Sprite.modulate.a = 0
 		state = 0
 		target = get_tree().get_nodes_in_group('Player')[0]
 		var truc = get_tree().get_nodes_in_group('Player')[0].position
-		var rh = randi()%3141/500
+		var rh = randi()%3141/500.0
 		position = truc + Vector2(cos(rh),sin(rh)) * speed * 0.5
 		n = 0
 		var expl = Alerte.instance()
@@ -48,7 +50,7 @@ func act_appear(delta):
 		$Sprite.modulate.a = 1
 		direction = target.position - position
 		direction = direction.normalized() * speed
-		var rh = direction.angle()
+		#var rh = direction.angle()
 		
 func act_target(delta):
 	position += direction * delta
@@ -65,7 +67,7 @@ func act_disappear(delta):
 		n = 0
 		state = 0
 		var truc = get_tree().get_nodes_in_group('Player')[0].position
-		var rh = randi()%3141/500
+		var rh = randi()%3141/500.0
 		position = truc + Vector2(cos(rh),sin(rh)) * speed * 0.5
 		direction = Vector2(0,0)
 		if die:

@@ -4,11 +4,13 @@ extends Sprite
 # var a = 2
 var lifeSpan = 3
 var pos
+var appearBuffer = 0.2
+var appear = 0
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
+	$Sprite.set_visible(false)
 
 func rota(r):
 	$Sprite.rotation = r

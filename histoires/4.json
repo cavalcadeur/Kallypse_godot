@@ -12,7 +12,7 @@
               ["playSong","matin"],
               ["waitKey",[4]],
               ["changeStep",3],
-			  ["activateCroissant"]],
+			  ["reviveCroissant"]],
     "first":0
 
 }

@@ -7,53 +7,37 @@
 [ext_resource path="res://objets/Arbre.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objets/RocherA.tscn" type="PackedScene" id=6]
 
-[node name="ObjetsTable" type="YSort" index="0"]
+[node name="ObjetsTable" type="YSort"]
 
-sort_enabled = true
-_sections_unfolded = [ "Transform" ]
-
-[node name="ProfA" parent="." index="0" instance=ExtResource( 1 )]
-
+[node name="ProfA" parent="." instance=ExtResource( 1 )]
 position = Vector2( 619.081, 772.971 )
 
-[node name="ProfB" parent="." index="1" instance=ExtResource( 2 )]
-
+[node name="ProfB" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1005.93, 783.891 )
 
-[node name="Table" parent="." index="2" groups=[
+[node name="Table" parent="." groups=[
 "Player",
 ] instance=ExtResource( 3 )]
-
 position = Vector2( 805.169, 747.166 )
 speed = 400
 
-[node name="Sol" parent="." index="3" instance=ExtResource( 4 )]
-
+[node name="Sol" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3.99329, -1580.66 )
 scale = Vector2( 1, 2.53243 )
 
-[node name="Arbre" parent="." index="4" instance=ExtResource( 5 )]
-
+[node name="Arbre" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1375.29, 424.706 )
 
-[node name="RocherA" parent="." index="5" instance=ExtResource( 6 )]
-
+[node name="RocherA" parent="." instance=ExtResource( 6 )]
 position = Vector2( 111.301, 530.088 )
 
-[node name="RocherA2" parent="." index="6" instance=ExtResource( 6 )]
-
+[node name="RocherA2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1920.89, 296.543 )
 
-[node name="RocherA3" parent="." index="7" instance=ExtResource( 6 )]
-
+[node name="RocherA3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1382.66, 1280.58 )
 scale = Vector2( -1, 1.34979 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="RocherA4" parent="." index="8" instance=ExtResource( 6 )]
-
+[node name="RocherA4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 575.248, -119.685 )
 scale = Vector2( -1.5, 1.5 )
-_sections_unfolded = [ "Transform" ]
-
-

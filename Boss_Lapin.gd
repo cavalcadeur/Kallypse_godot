@@ -42,7 +42,7 @@ func new_dir():
 	var dist = (position - center)
 	dist = (dist.x / radiusX)*(dist.x / radiusX) + (dist.y / radiusY)*(dist.y / radiusY)
 	if dist <= 1:
-		var r = (randi() % 628) / 100
+		var r = (randi() % 628) / 100.0
 		direction = Vector2(cos(r),sin(r))
 	else:
 		direction = (center-position).normalized()

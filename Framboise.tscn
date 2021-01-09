@@ -7,20 +7,10 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
 [node name="Framboise" type="Area2D" groups=[
 "framboise",
 ]]
-
 input_pickable = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
 script = ExtResource( 1 )
 appearTime = 3.0
 disappearTime = 1.0
@@ -28,22 +18,13 @@ speed = 450
 targetTime = 2
 Explosion = ExtResource( 2 )
 Alerte = ExtResource( 3 )
-vitesse = 50
-center = Vector2( 990, 520 )
-radiusX = 600
-radiusY = 300
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.681122, -28.9478 )
 texture = ExtResource( 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.362805, -16.437 )
 scale = Vector2( 2.43227, 1.53519 )
 shape = SubResource( 1 )
-
 [connection signal="body_entered" from="." to="." method="_on_Framboise_body_entered"]
-
-

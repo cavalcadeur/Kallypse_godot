@@ -6,7 +6,6 @@
 [ext_resource path="res://images/tuto/fleches2.png" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
-
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
@@ -17,10 +16,7 @@ animations = [ {
 [node name="tuto_fleches" groups=[
 "die_when_moving",
 ] instance=ExtResource( 1 )]
-
 position = Vector2( 114.241, -158.668 )
 frames = SubResource( 1 )
 timeOut = 10
 speedUp = -235
-
-
